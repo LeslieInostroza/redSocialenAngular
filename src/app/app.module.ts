@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RedSocialLoginComponent } from './red-social-login/red-social-login.component';
+import { PaginaMuroComponent } from './pagina-muro/pagina-muro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RedSocialLoginComponent
+    RedSocialLoginComponent,
+    PaginaMuroComponent
   ],
   imports: [
     BrowserModule,
