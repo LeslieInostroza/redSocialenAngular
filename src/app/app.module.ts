@@ -8,6 +8,7 @@ import { RedSocialLoginComponent } from './red-social-login/red-social-login.com
 import { PaginaMuroComponent } from './pagina-muro/pagina-muro.component';
 import { PaginaPerfilComponent } from './pagina-perfil/pagina-perfil.component';
 import { FormLoginComponent } from './form-login/form-login.component';
+import { RegistroLoginComponent } from './registro-login/registro-login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormLoginComponent } from './form-login/form-login.component';
     RedSocialLoginComponent,
     PaginaMuroComponent,
     PaginaPerfilComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    RegistroLoginComponent
   ],
   imports: [
     BrowserModule,

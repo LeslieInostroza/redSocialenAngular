@@ -7,18 +7,7 @@ body{
   height: 100vh;
   text-align: center;
 }
-button{
-  background-color: #22B4BD;
-	border: 0px;
-	cursor: pointer;
-	margin: 4em auto;
-	width: 60vw;
-	height: 6vh;
-	display: block;
-	color: #FFF;  
-	margin-bottom: 2%;
-  margin-top:2%;
-}
+
 
   img{
     text-align: center;
@@ -29,12 +18,4 @@ button{
     margin-bottom: 10%;  
   }
 
-input{
-  border-radius: 0%;
-  border: 0px;
-  width: 60vw;
-	height: 6vh;
-	display: block;
-	margin-left: 17%;
-	margin-top: 2%; 
-}
+

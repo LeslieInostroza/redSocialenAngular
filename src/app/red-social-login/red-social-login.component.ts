@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { PaginaMuroComponent } from '../pagina-muro/pagina-muro.component';
 
 @Component({
   selector: 'app-red-social-login',
