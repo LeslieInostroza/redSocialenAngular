@@ -1,6 +1,11 @@
 body{
   background-image: url(../../assets/img/portada2.png);
-  height: 50vh;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
 }
 button{
   background-color: #22B4BD;
@@ -12,5 +17,14 @@ button{
 	display: block;
 	color: #FFF;  
 	margin-bottom: 2%;
-	margin-top:2%;
+  margin-top:2%;
 }
+
+  img{
+    text-align: center;
+    width: 70vw;
+    margin: 10%;
+    margin-left: 10%;
+    margin-top: 20%;
+    margin-bottom: 10%;  
+  }
