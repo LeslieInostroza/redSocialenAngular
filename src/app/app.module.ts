@@ -10,6 +10,8 @@ import { PaginaPerfilComponent } from './pagina-perfil/pagina-perfil.component';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { LoginFacebookGoogleComponent } from './login-facebook-google/login-facebook-google.component';
 import { RegistroLoginComponent } from './registro-login/registro-login.component';
+import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
+import { GoogleLoginComponent } from './google-login/google-login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RegistroLoginComponent } from './registro-login/registro-login.componen
     PaginaPerfilComponent,
     FormLoginComponent,
     LoginFacebookGoogleComponent,
-    RegistroLoginComponent
+    RegistroLoginComponent,
+    FacebookLoginComponent,
+    GoogleLoginComponent    
   ],
   imports: [
     BrowserModule,
