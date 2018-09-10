@@ -1,4 +1,17 @@
 body{
   background-image: url(../../assets/img/portada2.png);
-  height: 50vh;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
+img{
+  text-align: center;
+  width: 70vw;
+  margin: 10%;
+  margin-left: 10%;
+  margin-top: 20%;
+  margin-bottom: 10%;
 }
