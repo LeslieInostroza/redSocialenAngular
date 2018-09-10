@@ -1,0 +1,15 @@
+p{
+  text-align: center;
+  display:block;
+  color:rgb(31, 30, 30);
+  margin-top:1%;
+  margin-bottom:2%;
+  font-size: 100%;
+  border: 0px;  
+}
+.textLogin{
+  font-size: 100%;
+	color: #303030;
+	cursor: pointer;
+	font-weight: bold; 
+}
