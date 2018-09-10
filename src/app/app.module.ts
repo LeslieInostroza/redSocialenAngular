@@ -9,6 +9,7 @@ import { PaginaMuroComponent } from './pagina-muro/pagina-muro.component';
 import { PaginaPerfilComponent } from './pagina-perfil/pagina-perfil.component';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { LoginFacebookGoogleComponent } from './login-facebook-google/login-facebook-google.component';
+import { RegistroLoginComponent } from './registro-login/registro-login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginFacebookGoogleComponent } from './login-facebook-google/login-face
     PaginaMuroComponent,
     PaginaPerfilComponent,
     FormLoginComponent,
-    LoginFacebookGoogleComponent
+    LoginFacebookGoogleComponent,
+    RegistroLoginComponent
   ],
   imports: [
     BrowserModule,
