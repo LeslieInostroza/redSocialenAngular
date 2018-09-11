@@ -8,7 +8,6 @@ import { RedSocialLoginComponent } from './red-social-login/red-social-login.com
 import { PaginaMuroComponent } from './pagina-muro/pagina-muro.component';
 import { PaginaPerfilComponent } from './pagina-perfil/pagina-perfil.component';
 import { FormLoginComponent } from './form-login/form-login.component';
-import { LoginFacebookGoogleComponent } from './login-facebook-google/login-facebook-google.component';
 import { RegistroLoginComponent } from './registro-login/registro-login.component';
 import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
 import { GoogleLoginComponent } from './google-login/google-login.component';
@@ -25,7 +24,6 @@ import { AuthService } from './auth.service';
     PaginaMuroComponent,
     PaginaPerfilComponent,
     FormLoginComponent,
-    LoginFacebookGoogleComponent,
     RegistroLoginComponent,
     FacebookLoginComponent,
     GoogleLoginComponent    
