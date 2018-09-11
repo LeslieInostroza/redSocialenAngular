@@ -1,4 +1,4 @@
-body{
+div{
   background-image: url(../../assets/img/portada2.png);
   background-position: center center;
   background-attachment: fixed;
@@ -9,13 +9,13 @@ body{
 }
 
 
-  img{
+img{
     text-align: center;
     width: 70vw;
     margin: 10%;
     margin-left: 10%;
     margin-top: 20%;
     margin-bottom: 10%;  
-  }
+}
 
 
