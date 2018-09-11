@@ -8,7 +8,8 @@ button{
 	display: block;
 	color: #FFF;  
 	margin-bottom: 2%;
-  margin-top:2%;
+	margin-top:2%;
+	margin-left: 17%;
 }
 input{
   border-radius: 0%;

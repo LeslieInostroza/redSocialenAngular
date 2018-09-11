@@ -12,6 +12,11 @@ import { LoginFacebookGoogleComponent } from './login-facebook-google/login-face
 import { RegistroLoginComponent } from './registro-login/registro-login.component';
 import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
 import { GoogleLoginComponent } from './google-login/google-login.component';
+// firebase angularfire
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -28,8 +33,10 @@ import { GoogleLoginComponent } from './google-login/google-login.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
