@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -17,7 +18,22 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './auth.service';
 import { MenuComponent } from './menu/menu.component';
+import { ContainerLoginComponent } from './container-login/container-login.component';
 
+const appRoutes: Routes = [
+  {
+    path:'',
+    component: PaginaMuroComponent
+  },
+  {
+    path:'muro',
+    component: PaginaMuroComponent
+  },
+  {
+    path:'perfil',
+    component: PaginaPerfilComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +43,8 @@ import { MenuComponent } from './menu/menu.component';
     FormLoginComponent,
     FacebookLoginComponent,
     GoogleLoginComponent,
-    MenuComponent    
+    MenuComponent,
+    ContainerLoginComponent,       
   ],
   imports: [
     BrowserModule,
@@ -37,6 +54,7 @@ import { MenuComponent } from './menu/menu.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
