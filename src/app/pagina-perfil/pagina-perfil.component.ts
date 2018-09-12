@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -9,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PaginaPerfilComponent implements OnInit {
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,10 @@ export class PaginaPerfilComponent implements OnInit {
             duration: 3000
           });
       });
+  }
+
+  goToWall(){
+    this.router.navigate(['/muro']);
   }
 
 }

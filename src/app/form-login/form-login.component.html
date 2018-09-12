@@ -1,5 +1,5 @@
 
-<div *ngIf="authService.user | async">Bienvenido : {{(authService.user | async).email}}</div> 
+
 <form [formGroup]="formLogin" (ngSubmit)="onRegister()" *ngIf="!(authService.user | async)">
 <input type="email" placeholder="Email address" formControlName="email">
 <input type="password" placeholder="Password" formControlName="password">

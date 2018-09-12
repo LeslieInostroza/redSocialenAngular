@@ -23,7 +23,7 @@ import { ContainerLoginComponent } from './container-login/container-login.compo
 const appRoutes: Routes = [
   {
     path:'',
-    component: PaginaMuroComponent
+    component: RedSocialLoginComponent
   },
   {
     path:'muro',
