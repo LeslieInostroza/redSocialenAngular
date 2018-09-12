@@ -24,7 +24,7 @@ import { AuthService } from './auth.service';
     PaginaPerfilComponent,
     FormLoginComponent,
     FacebookLoginComponent,
-    GoogleLoginComponent    
+    GoogleLoginComponent   
   ],
   imports: [
     BrowserModule,
