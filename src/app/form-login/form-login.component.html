@@ -1,7 +1,10 @@
-<div>
-<input type="email" placeholder="Email address">
-<input type="password" placeholder="Password">
-<button type="button">ENTRAR</button>
+
+<div *ngIf="authService.user | async">Bienvenido : {{(authService.user | async).email}}</div> 
+<form [formGroup]="formLogin" (ngSubmit)="onRegister()" *ngIf="!(authService.user | async)">
+<input type="email" placeholder="Email address" formControlName="email">
+<input type="password" placeholder="Password" formControlName="password">
+<button type="button"(click)="onLogin()" [disabled]="!formLogin.valid" >ENTRAR</button>
 <p>¿Aún no tienes Cuenta?</p>
-<button type="button">REGISTRAR</button>
-</div>
+<button type="submit"[disabled]="!formLogin.valid" >REGISTRAR</button>
+</form>
+
