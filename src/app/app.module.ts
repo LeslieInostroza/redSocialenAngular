@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './auth.service';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AuthService } from './auth.service';
     PaginaPerfilComponent,
     FormLoginComponent,
     FacebookLoginComponent,
-    GoogleLoginComponent    
+    GoogleLoginComponent,
+    MenuComponent    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
