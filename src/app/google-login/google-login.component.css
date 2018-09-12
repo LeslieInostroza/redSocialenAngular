@@ -1,11 +1,12 @@
 button{
+	border-radius: 50%;
   background-color: #4285F4;
 	border: 0px;
 	cursor: pointer;
 	margin: 4em auto;
-	width: 60vw;
+	width: 10vw;
 	height: 6vh;
-	display: block;
+	display: inline-block;
 	color: #FFF;  
 	font-size: 15px;
 	margin-top:2%;
