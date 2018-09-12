@@ -21,7 +21,7 @@ import { AuthService } from './auth.service';
 const appRoutes: Routes = [
   {
     path:'',
-    component: PaginaMuroComponent
+    component: RedSocialLoginComponent
   },
   {
     path:'muro',

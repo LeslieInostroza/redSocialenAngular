@@ -1,4 +1,4 @@
-<body>
   <p>hola soy un muro</p>
-  <button type="button" routerLink="/perfil">Perfil</button>
-</body>
+  <div *ngIf="authService.user | async">Bienvenido : {{(authService.user | async).email}}</div> 
+  <button type="button" *ngIf="authService.user | async" (click)="goToProfile()">Perfil</button>
+

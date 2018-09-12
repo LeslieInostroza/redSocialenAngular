@@ -1,4 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-red-social-login',
@@ -6,14 +7,8 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./red-social-login.component.css']
 })
 export class RedSocialLoginComponent implements OnInit {
-@Output() onChange: EventEmitter<any> = new EventEmitter<any>();
-  constructor() { }
+  constructor(private authservice: AuthService) { }
 
   ngOnInit() {
   }
-ChangeWall(PaginaMuroComponent){
-  this.onChange.emit({
-    
-  });
-}
 }
