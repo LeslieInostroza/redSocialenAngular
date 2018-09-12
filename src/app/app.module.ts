@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -17,6 +18,20 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './auth.service';
 
+const appRoutes: Routes = [
+  {
+    path:'',
+    component: PaginaMuroComponent
+  },
+  {
+    path:'muro',
+    component: PaginaMuroComponent
+  },
+  {
+    path:'perfil',
+    component: PaginaPerfilComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +48,8 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
