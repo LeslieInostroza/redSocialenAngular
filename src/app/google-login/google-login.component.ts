@@ -11,5 +11,5 @@ export class GoogleLoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }
