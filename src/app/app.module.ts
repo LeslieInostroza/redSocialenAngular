@@ -32,6 +32,10 @@ const appRoutes: Routes = [
   {
     path:'perfil',
     component: PaginaPerfilComponent
+  },
+  {
+    path:'login',
+    component: RedSocialLoginComponent
   }
 ];
 @NgModule({
