@@ -18,6 +18,7 @@ export class PaginaPerfilComponent implements OnInit {
     this.authService.logout()
       .then(() => {
         //Logout exitoso, adios usuario!
+        this.router.navigate(['/login']);
       })
       .catch(() => {
         //Algo salió mal, avisemos mejor para que reintente
