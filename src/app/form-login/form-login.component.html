@@ -3,7 +3,7 @@
 <form [formGroup]="formLogin" (ngSubmit)="onRegister()" *ngIf="!(authService.user | async)">
 <input type="email" placeholder="Email address" formControlName="email">
 <input type="password" placeholder="Password" formControlName="password">
-<button type="button" routerLink="/muro"(click)="onLogin()" [disabled]="!formLogin.valid" >ENTRAR</button>
+<button type="button" (click)="onLogin()" [disabled]="!formLogin.valid" >ENTRAR</button>
 <p>¿Aún no tienes Cuenta?</p>
 <button type="submit"[disabled]="!formLogin.valid" >REGISTRAR</button>
 </form>
