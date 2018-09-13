@@ -12,6 +12,9 @@ import { FormLoginComponent } from './form-login/form-login.component';
 import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
 import { GoogleLoginComponent } from './google-login/google-login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 // firebase angularfire
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -63,7 +66,10 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,    
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
