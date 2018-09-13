@@ -13,9 +13,9 @@ import { FacebookLoginComponent } from './facebook-login/facebook-login.componen
 import { GoogleLoginComponent } from './google-login/google-login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 // firebase angularfire
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
 import { MenuComponent } from './menu/menu.component';
 import { ContainerLoginComponent } from './container-login/container-login.component';
