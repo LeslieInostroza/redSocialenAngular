@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-google-login',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoogleLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor( public authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
-  
+   tryGoogleLogin(){
+     this.authService.loginGoogle()
+     .then(response => {
+       this.router.navigate(['/muro']);
+     })
+   }
 }
