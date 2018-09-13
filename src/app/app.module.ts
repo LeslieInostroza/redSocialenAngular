@@ -9,14 +9,13 @@ import { RedSocialLoginComponent } from './red-social-login/red-social-login.com
 import { PaginaMuroComponent } from './pagina-muro/pagina-muro.component';
 import { PaginaPerfilComponent } from './pagina-perfil/pagina-perfil.component';
 import { FormLoginComponent } from './form-login/form-login.component';
-import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
-import { GoogleLoginComponent } from './google-login/google-login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 // firebase angularfire
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
+import { LoginGoogleFacebookComponent } from './login-google-facebook/login-google-facebook.component';
 
 const appRoutes: Routes = [
   {
@@ -43,8 +42,7 @@ const appRoutes: Routes = [
     PaginaMuroComponent,
     PaginaPerfilComponent,
     FormLoginComponent,
-    FacebookLoginComponent,
-    GoogleLoginComponent   
+    LoginGoogleFacebookComponent   
   ],
   imports: [
     BrowserModule,
