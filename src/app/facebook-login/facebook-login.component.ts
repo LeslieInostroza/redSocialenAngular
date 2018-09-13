@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-facebook-login',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacebookLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
-
+  tryLoginFAcebook(){
+    this.authService.loginFacebook()
+    .then(response => {
+      this.router.navigate(['/muro']);
+    })
+  }
 }
