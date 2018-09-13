@@ -15,7 +15,12 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
-import { LoginGoogleFacebookComponent } from './login-google-facebook/login-google-facebook.component';
+import { MenuComponent } from './menu/menu.component';
+import { ContainerLoginComponent } from './container-login/container-login.component';
+import { MessageComponent } from './message/message.component';
+import { MessageFeedComponent } from './message-feed/message-feed.component';
+import { MessageFormComponent } from './message-form/message-form.component'
+import { LoginGoogleFacebookComponent } from './login-google-facebook/login-google-facebook.component'
 
 const appRoutes: Routes = [
   {
@@ -42,6 +47,11 @@ const appRoutes: Routes = [
     PaginaMuroComponent,
     PaginaPerfilComponent,
     FormLoginComponent,
+    MenuComponent,
+    ContainerLoginComponent,
+    MessageComponent,
+    MessageFeedComponent,
+    MessageFormComponent,
     LoginGoogleFacebookComponent   
   ],
   imports: [
@@ -50,7 +60,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    AngularFireAuthModule,    
     RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthService],

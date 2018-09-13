@@ -1,0 +1,10 @@
+.bg-blue{
+	z-index: 1000;
+	background-color: #22B4BD;
+}
+.pos-f-t{
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	border-width: 0 0 1px;
+}

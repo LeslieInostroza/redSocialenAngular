@@ -10,17 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./form-login.component.css']
 })
 export class FormLoginComponent implements OnInit {
-  formLogin:FormGroup;
+  formLogin: FormGroup;
 
   constructor(private formBuilder:FormBuilder, private authService:AuthService, public snackBar: MatSnackBar, private router: Router) { this.createFormLogin();
   }
-  
+
   ngOnInit() {
   }
-  createFormLogin(){
+  createFormLogin() {
     this.formLogin = this.formBuilder.group({
-      email:['', Validators.compose([Validators.required, Validators.email])],
-      password:['', Validators.compose([Validators.required, Validators.minLength(4)])]
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
   }
   onRegister(){
