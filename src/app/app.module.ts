@@ -9,8 +9,6 @@ import { RedSocialLoginComponent } from './red-social-login/red-social-login.com
 import { PaginaMuroComponent } from './pagina-muro/pagina-muro.component';
 import { PaginaPerfilComponent } from './pagina-perfil/pagina-perfil.component';
 import { FormLoginComponent } from './form-login/form-login.component';
-import { FacebookLoginComponent } from './facebook-login/facebook-login.component';
-import { GoogleLoginComponent } from './google-login/google-login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 // firebase angularfire
 import { AngularFireModule } from '@angular/fire';
@@ -21,7 +19,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ContainerLoginComponent } from './container-login/container-login.component';
 import { MessageComponent } from './message/message.component';
 import { MessageFeedComponent } from './message-feed/message-feed.component';
-import { MessageFormComponent } from './message-form/message-form.component';
+import { MessageFormComponent } from './message-form/message-form.component'
+import { LoginGoogleFacebookComponent } from './login-google-facebook/login-google-facebook.component'
 
 const appRoutes: Routes = [
   {
@@ -48,13 +47,12 @@ const appRoutes: Routes = [
     PaginaMuroComponent,
     PaginaPerfilComponent,
     FormLoginComponent,
-    FacebookLoginComponent,
-    GoogleLoginComponent,
     MenuComponent,
     ContainerLoginComponent,
     MessageComponent,
     MessageFeedComponent,
-    MessageFormComponent,       
+    MessageFormComponent,
+    LoginGoogleFacebookComponent   
   ],
   imports: [
     BrowserModule,

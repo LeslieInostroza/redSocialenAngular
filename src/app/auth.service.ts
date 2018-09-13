@@ -33,8 +33,23 @@ export class AuthService {
       .signInWithPopup(provider)
       .then(response => {
         resolve (response)
+      }, err => {
+        console.log(err);
+        reject(err);
+      });
+    });
+  }
+  loginFacebook(){
+    return new Promise<any>((resolve, reject) => {
+      let provider = new firebase.auth.FacebookAuthProvider();
+      this.firebaseAuth.auth
+      .signInWithPopup(provider)
+      .then(response => {
+        resolve(response);
+      }, err => {
+        console.log(err);
+        reject(err);
       })
     })
-    
   }
 }
