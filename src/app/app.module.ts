@@ -13,6 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 // firebase angularfire
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
-<p>
-  message-feed works!
-</p>
+<app-message *ngFor="let app-message of (messages$ | async)" [name]="message.name"
+          [message]="message.message"></app-message>
+
+

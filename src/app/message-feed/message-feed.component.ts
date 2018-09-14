@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class MessageFeedComponent implements OnInit {
   messages$:Observable<any>; 
-  constructor(private database:AngularFireDatabase) {this.messages$ = this.database.list('/memes').valueChanges();
+  constructor(private database:AngularFireDatabase) {this.messages$ = this.database.list('/messages').valueChanges();
  }
   ngOnInit() {
   }
