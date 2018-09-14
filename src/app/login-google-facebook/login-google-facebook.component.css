@@ -1,18 +1,14 @@
 button{
-	border-radius: 50%;
-  background-color: #4285F4;
-	border: 0px;
-	cursor: pointer;
-	margin: 4em auto;
-	width: 10vw;
-	height: 6vh;
-	display: inline-block;
-	color: #FFF;  
-	font-size: 15px;
+	display: inline-block; 
 	margin-top:2%;
-	margin-bottom: 2%;
 	margin-left: 17%;
 }
-img{
-  width: 20px;
+
+.btnfb{
+	background-color: #4267B2;
+	color: white;
+}
+.btngo{
+	background-color: #DC4538;
+	color: white;
 }

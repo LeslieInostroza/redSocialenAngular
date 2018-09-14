@@ -1,4 +1,4 @@
-<app-message *ngFor="let app-message of (messages$ | async)" [name]="message.name"
-          [message]="message.message"></app-message>
+<app-message *ngFor="let message of (posts$ | async)" [name]="message.name"
+          [post]="message.post"></app-message>
 
 

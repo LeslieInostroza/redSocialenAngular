@@ -11,24 +11,27 @@ export class MessageFormComponent implements OnInit {
   messageForm: FormGroup;
   messageList$ :AngularFireList<any>;
 
-  constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase) { }
-
+  constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase) { 
+    this.createMessageForm();
+    this.messageList$ = this.database.list('/posts');
+  }
+  
   ngOnInit() {
   }
   
   createMessageForm() {
     this.messageForm = this.formBuilder.group({
       name: ['', Validators.required],
-      message: ['', Validators.required]      
+      post: ['', Validators.required]      
     });
   }
 
   addMessage() { 
-    const newMeme = {
-      name: this.messageForm.value.title,
-      message: this.messageForm.value.image      
+    const newMen = {
+      name: this.messageForm.value.name,
+      post: this.messageForm.value.post    
     };
-    this.messageList$.push(newMeme);
+    this.messageList$.push(newMen);
     this.messageForm.reset();
 }
 }

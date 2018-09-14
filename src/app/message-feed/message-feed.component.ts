@@ -8,8 +8,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./message-feed.component.css']
 })
 export class MessageFeedComponent implements OnInit {
-  messages$:Observable<any>; 
-  constructor(private database:AngularFireDatabase) {this.messages$ = this.database.list('/messages').valueChanges();
+  posts$:Observable<any>;
+   
+  constructor(private database:AngularFireDatabase) {
+    this.posts$ = this.database.list('/posts').valueChanges();
  }
   ngOnInit() {
   }

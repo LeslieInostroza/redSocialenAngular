@@ -1,3 +1,9 @@
-<p>
-  message-form works!
-</p>
+<form [formGroup]="messageForm" (ngSubmit)="addMessage()">        
+        
+        <input #name type="text" formControlName="name">       
+        <input #post type="text" formControlName="post">     
+        <button type="submit" [disabled]="!messageForm.valid">Agrega un mensaje</button>
+      </form>
+      <p>
+        {{messageForm.value | json}}                
+      </p>
