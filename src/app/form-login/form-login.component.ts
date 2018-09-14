@@ -27,6 +27,7 @@ export class FormLoginComponent implements OnInit {
     this.authService.signup(this.formLogin.value.email, this.formLogin.value.password)
     .then(()=>{
     //Registro exitoso, celebremos esto!
+      this.router.navigate(['/login']);
     })
     .catch(()=>{
     //Algo salió mal, avisemos mejor para que reintente
