@@ -1,4 +1,6 @@
 <app-message *ngFor="let message of (posts$ | async)" [name]="message.name"
           [post]="message.post"></app-message>
-
+          <div class="example-full-width">
+            <button (click)="delete()">Delete</button>
+                
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 
 @Component({
   selector: 'app-message-form',
@@ -10,10 +10,12 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 export class MessageFormComponent implements OnInit {
   messageForm: FormGroup;
   messageList$ :AngularFireList<any>;
+  itemRef: AngularFireObject<any>;
 
   constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase) { 
     this.createMessageForm();
     this.messageList$ = this.database.list('/posts');
+    this.itemRef = this.database.object('/posts');      
   }
   
   ngOnInit() {
@@ -33,5 +35,9 @@ export class MessageFormComponent implements OnInit {
     };
     this.messageList$.push(newMen);
     this.messageForm.reset();
+    
+}
+deletem() {
+  this.itemRef.remove();
 }
 }
