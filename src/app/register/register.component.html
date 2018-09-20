@@ -1,0 +1,11 @@
+<h5>Registro</h5>
+<button type="button" (click)="onbackLogin()">
+  <span>&times;</span>
+</button>
+<form [formGroup]="formRegister" (ngSubmit)="onRegister()">
+  <label>Correo Electronico</label>
+  <input formControlName="email" type ="email" placeholder="Correo Electronico" />
+  <label for="login-pas" class="form-label">Contraseña</label>
+  <input formControlName="password" type="password" placeholder="Contraseña"/>
+  <button type="submit">Registrar</button>
+</form>

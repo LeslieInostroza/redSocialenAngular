@@ -24,6 +24,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
+import { RegisterComponent } from './register/register.component';
 
 
 const appRoutes: Routes = [
@@ -42,6 +43,10 @@ const appRoutes: Routes = [
   {
     path:'login',
     component: RedSocialLoginComponent
+  },
+  {
+    path:'registro',
+    component: RegisterComponent
   }
 ];
 @NgModule({
@@ -55,7 +60,8 @@ const appRoutes: Routes = [
     MessageComponent,
     MessageFeedComponent,
     MessageFormComponent,
-    LoginGoogleFacebookComponent   
+    LoginGoogleFacebookComponent,
+    RegisterComponent   
   ],
   imports: [
     BrowserModule,
