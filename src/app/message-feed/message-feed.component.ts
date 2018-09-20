@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AngularFireDatabase, AngularFireObject, AngularFireAction } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireObject, AngularFireAction, } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-message-feed',
   templateUrl: './message-feed.component.html',
@@ -20,7 +21,7 @@ export class MessageFeedComponent implements OnInit {
     this.item =  this.itemRef.snapshotChanges().subscribe(action => {
       console.log(action.type);
       console.log(action.key)
-      console.log(action.payload.val())  
+      console.log(action.payload.node_.children_.root_.key)  
     });
 
     
@@ -28,7 +29,12 @@ export class MessageFeedComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete () {    
-    this.itemRef.remove()    
+  deleteItem (key: string) {    
+    this.itemRef.remove(); 
+  }
+
+  editItem (){
+    this.itemRef.remove();
+    
   }
 }
