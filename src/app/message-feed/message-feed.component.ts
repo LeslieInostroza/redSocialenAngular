@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AngularFireDatabase, AngularFireObject, AngularFireAction, } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireObject, AngularFireAction, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,29 +12,28 @@ import { map } from 'rxjs/operators';
 export class MessageFeedComponent implements OnInit { 
   @Output () deleteMen: EventEmitter<any> = new EventEmitter<any>();
   posts$:Observable<any>;  
-  itemRef:AngularFireObject<any>;
-  messageFeed: FormGroup;
-  item: any;
+  itemsRef: AngularFireList<any>;
   constructor(private database:AngularFireDatabase) {
     this.posts$ = this.database.list('/posts').valueChanges();    
-    this.itemRef = this.database.object('/posts');
-    this.item =  this.itemRef.snapshotChanges().subscribe(action => {
+    this.itemsRef = this.database.list('/posts');
+    this.itemsRef.snapshotChanges(['child_added'])
+  .subscribe(actions => {
+    actions.forEach(action => {
       console.log(action.type);
-      console.log(action.key)
-      console.log(action.payload.node_.children_.root_.key)  
+      console.log(action.key);
+      console.log(action.payload.val());
     });
-
-    
+  });
  }
   ngOnInit() {
   }
 
   deleteItem (key: string) {    
-    this.itemRef.remove(); 
+    this.itemsRef.remove(key); 
   }
 
   editItem (){
-    this.itemRef.remove();
+    this.itemsRef.remove();
     
   }
 }
