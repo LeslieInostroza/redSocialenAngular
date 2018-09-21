@@ -1,8 +1,8 @@
 <div>
-    <h5>Registro</h5>
     <button class="btnBack" mat-mini-fab type="button" (click)="onbackLogin()">
         <i class="fas fa-arrow-left"></i>
     </button>
+    <h1>Registro</h1>
     <form [formGroup]="formRegister" (ngSubmit)="onRegister()">
       <input formControlName="email" type ="email" placeholder="Correo Electronico" />
       <input formControlName="password" type="password" placeholder="Contraseña"/>

@@ -9,7 +9,6 @@ div{
   height: 115vh;
   padding-top: 1px;
 }
-
 .btnBack{
   background-color: #22B4BD;
   color: white;
@@ -37,4 +36,15 @@ input{
   width: 60vw;
   height: 6vh;
   display: block;
+}
+
+@media(min-width: 768px){
+  .btnBack{
+    right: 230px;
+  }
+}
+@media(min-width:1024px ) and (max-width: 2560px) {
+  .btnBack{
+    right: 287px;
+  }
 }
