@@ -12,7 +12,7 @@ export class MenuComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
   constructor(changeDerctorRef: ChangeDetectorRef, media: MediaMatcher) { 
-    this.mobileQuery = media.matchMedia('(max-width: 700px)');
+    this.mobileQuery = media.matchMedia('(max-width: 2560px)');
     this._mobileQueryListener = () => changeDerctorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
