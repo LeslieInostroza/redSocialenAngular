@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Red Social';
-
-  constructor(private router: Router, private authService: AuthService){
-
-  }
-
+  items: Observable<any[]>;
+  constructor(db: AngularFirestore, private router: Router, private authService: AuthService) {
+    this.items = db.collection('items').valueChanges();
+  } 
 
 }

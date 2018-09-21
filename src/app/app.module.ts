@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { PostComponent } from './post/post.component';
 // firebase angularfire
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -25,6 +26,12 @@ import { MessageFeedComponent } from './message-feed/message-feed.component';
 import { MessageFormComponent } from './message-form/message-form.component';
 import { LoginGoogleFacebookComponent } from './login-google-facebook/login-google-facebook.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { DataService } from './data.service';
+import { FormsModule } from '@angular/forms'
 
 
 const appRoutes: Routes = [
@@ -56,7 +63,8 @@ const appRoutes: Routes = [
     MessageComponent,
     MessageFeedComponent,
     MessageFormComponent,
-    LoginGoogleFacebookComponent   
+    LoginGoogleFacebookComponent,
+    PostComponent   
   ],
   imports: [
     BrowserModule,
@@ -70,9 +78,14 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireFunctionsModule,
+    AngularFireMessagingModule,
+    FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

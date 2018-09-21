@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../data.service';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-message-form',
@@ -8,36 +11,43 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
   styleUrls: ['./message-form.component.css']
 })
 export class MessageFormComponent implements OnInit {
-  messageForm: FormGroup;
+ /* messageForm: FormGroup;
   messageList$ :AngularFireList<any>;
-  itemRef: AngularFireObject<any>;
-
-  constructor(private formBuilder: FormBuilder, private database:AngularFireDatabase) { 
-    this.createMessageForm();
-    this.messageList$ = this.database.list('/posts');
-    this.itemRef = this.database.object('/posts');      
+  itemRef: AngularFireObject<any>;*/
+  item: any = {
+    name:''
+  }
+  constructor(private database:AngularFireDatabase, private dataservice: DataService) { 
+    //this.createMessageForm();
+    //this.messageList$ = this.database.list('/posts');
+    //this.itemRef = this.database.object('/posts');      
   }
   
   ngOnInit() {
   }
   
-  createMessageForm() {
+  agregar(){
+    this.dataservice.addItemPost(this.item); 
+    this.item.name='';   
+  }
+  /*createMessageForm() {
     this.messageForm = this.formBuilder.group({
       name: ['', Validators.required],
-      post: ['', Validators.required]      
+      post: ['', Validators.required],
+          
     });
   }
 
   addMessage() { 
     const newMen = {
       name: this.messageForm.value.name,
-      post: this.messageForm.value.post    
+      //user: this.authService.user.email,
+      post: this.messageForm.value.post,
+      like: 0,
     };
     this.messageList$.push(newMen);
     this.messageForm.reset();
     
 }
-deletem() {
-  this.itemRef.remove();
-}
+*/
 }

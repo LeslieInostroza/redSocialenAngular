@@ -1,6 +1,15 @@
   <p>hola soy un muro</p>
   <div *ngIf="authService.user | async">Bienvenido : {{((authService.user | async) || {}).email}}</div> 
   <button type="button" *ngIf="authService.user | async" (click)="goToProfile()">Perfil</button>
-  <app-message-form></app-message-form>
-  <app-message-feed></app-message-feed>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <app-message-form></app-message-form>
+      </div>
+      <div class="col-6">        
+        <app-message-feed></app-message-feed> 
+      </div>
+    </div>
+  </div>
+  
+  
