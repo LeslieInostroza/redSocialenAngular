@@ -1,11 +1,11 @@
-<h5>Registro</h5>
-<button type="button" (click)="onbackLogin()">
-  <span>&times;</span>
-</button>
-<form [formGroup]="formRegister" (ngSubmit)="onRegister()">
-  <label>Correo Electronico</label>
-  <input formControlName="email" type ="email" placeholder="Correo Electronico" />
-  <label for="login-pas" class="form-label">Contraseña</label>
-  <input formControlName="password" type="password" placeholder="Contraseña"/>
-  <button type="submit">Registrar</button>
-</form>
+<div>
+    <h5>Registro</h5>
+    <button class="btnBack" mat-mini-fab type="button" (click)="onbackLogin()">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <form [formGroup]="formRegister" (ngSubmit)="onRegister()">
+      <input formControlName="email" type ="email" placeholder="Correo Electronico" />
+      <input formControlName="password" type="password" placeholder="Contraseña"/>
+      <button class="btnregistrar" type="submit">Registrar</button>
+    </form>
+</div>
