@@ -1,5 +1,11 @@
 div{
+  background-image: url(../../assets/img/portada2.png);
   text-align: center;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 170vw;
 }
 
 
