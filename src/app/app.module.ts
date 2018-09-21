@@ -17,7 +17,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MenuComponent } from './menu/menu.component';
-import { MessageComponent } from './message/message.component';
 import { MessageFeedComponent } from './message-feed/message-feed.component';
 import { MessageFormComponent } from './message-form/message-form.component'
 import { LoginGoogleFacebookComponent } from './login-google-facebook/login-google-facebook.component'
@@ -60,7 +59,6 @@ const appRoutes: Routes = [
     PaginaPerfilComponent,
     FormLoginComponent,
     MenuComponent,
-    MessageComponent,
     MessageFeedComponent,
     MessageFormComponent,
     LoginGoogleFacebookComponent,
