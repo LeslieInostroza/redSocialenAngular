@@ -5,6 +5,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { DataService } from '../data.service';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-message-feed',
   templateUrl: './message-feed.component.html',
@@ -20,7 +21,7 @@ export class MessageFeedComponent implements OnInit {
     name:''
   }
 
-  constructor(private database:AngularFireDatabase, private dataservice: DataService) {
+  constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService) {
     //this.posts$ = this.database.list('/posts').valueChanges();    
     this.dataservice.postItem().subscribe(item=>{
       this.items = item;

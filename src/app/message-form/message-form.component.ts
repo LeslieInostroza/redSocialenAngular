@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './message-form.component.html',
   styleUrls: ['./message-form.component.css']
 })
+
 export class MessageFormComponent implements OnInit {
  /* messageForm: FormGroup;
   messageList$ :AngularFireList<any>;
@@ -17,7 +18,7 @@ export class MessageFormComponent implements OnInit {
   item: any = {
     name:''
   }
-  constructor(private database:AngularFireDatabase, private dataservice: DataService) { 
+  constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService) { 
     //this.createMessageForm();
     //this.messageList$ = this.database.list('/posts');
     //this.itemRef = this.database.object('/posts');      

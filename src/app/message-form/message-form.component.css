@@ -1,0 +1,32 @@
+.publication{
+  border: none;
+  display: flex;
+  position: relative;
+}
+.btnMessage {
+	background-color: transparent;
+	border: none;
+	margin: none;
+	border: 0px;
+	cursor: pointer;
+	text-align: center;	
+	color: #22B4BD;
+	font-size: 13px;
+	font-family:'Roboto', sans-serif;
+	padding: 0%;
+  position: relative;
+  font-weight: 700;
+  display: flex;
+}
+
+.btnMessage:hover {	
+  color:cadetblue;	
+}
+
+.btnMessage:focus, textarea:focus{
+	outline: none;
+}
+.Welcome{
+	width: 50%;	
+	
+}

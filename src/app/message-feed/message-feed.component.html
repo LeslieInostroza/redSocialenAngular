@@ -1,19 +1,21 @@
-<p>hola soy la vista</p>
 <div *ngFor="let item of items">
-{{item.name}} - {{item.id}} 
-<div (click)="eliminar(item)">
+{{item.name}} - {{item.id}}
+<div>
+<button class="btnIcon" (click)="eliminar(item)">
 <i class="fas fa-trash-alt"></i>
-</div>
-<div (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
+</button>
+<button class="btnIcon" (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
 <i class="fas fa-marker"></i>
-</div>
+</button>
+<button class="btnIcon">
 <i class="fas fa-heartbeat"></i>
+</button>
+</div>
 </div>
 <!--<app-message *ngFor="let message of (posts$ | async)" [name]="message.name"
           [post]="message.post"></app-message>
           <div class="example-full-width">
-            <button (click)="delete()">Delete</button>-->
-                
+            <button (click)="delete()">Delete</button>-->                
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
