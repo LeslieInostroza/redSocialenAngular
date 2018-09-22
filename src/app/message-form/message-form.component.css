@@ -35,3 +35,9 @@
 .publication{
 	width: 50vh;;
 }
+
+@media(min-width: 425px) and (max-width: 2560px){
+	.publication{
+		width: 100%;
+	}
+}
