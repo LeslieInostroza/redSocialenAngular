@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -9,10 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./pagina-perfil.component.css']
 })
 export class PaginaPerfilComponent implements OnInit {
+  mobileQuery:  MediaQueryList;
+  private _mobileQueryListener: () => void;
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router, changeDerctorRef: ChangeDetectorRef, media: MediaMatcher) { 
+    this.mobileQuery = media.matchMedia('(max-width: 2560px)');
+    this._mobileQueryListener = () => changeDerctorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   onLogout() {
     this.authService.logout()

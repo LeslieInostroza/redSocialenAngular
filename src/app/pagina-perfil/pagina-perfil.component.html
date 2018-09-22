@@ -1,6 +1,9 @@
-
 <body>
-  <p>hola soy un perfil</p>
-  <button type="button" *ngIf="authService.user | async" (click)="onLogout()">Logout</button>
-  <button type="button" *ngIf="authService.user | async" (click)="goToWall()">Muro</button>
+  <app-menu></app-menu>
+  <div class="behind">
+    <button type="button" *ngIf="authService.user | async" (click)="goToWall()" class="fas fa-arrow-left">Muro</button>
+    <img src="">
+    <p>PERFIL</p>
+    <button type="button" class="logout" *ngIf="authService.user | async" (click)="onLogout()">Cerrar Sesión</button>
+  </div>
 </body>

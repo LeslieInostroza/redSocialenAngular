@@ -6,3 +6,17 @@ p{
 button{
   margin-left: 105px;
 }
+.behind {
+  background-color: #efefef;
+  height: 25px;
+  color: #303030;
+}
+.logout {
+  color: #303030;
+  font-size: 11px;
+  margin-left: 32%;
+  border-left: solid #dadada 1px;
+  padding-bottom: 2px;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+}
