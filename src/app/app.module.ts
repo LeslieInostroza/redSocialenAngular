@@ -72,7 +72,7 @@ const appRoutes: Routes = [
     MessageFeedComponent,
     MessageFormComponent,
     LoginGoogleFacebookComponent,
-    RegisterComponent,   
+    RegisterComponent,  
     PostComponent   
   ],
   imports: [
