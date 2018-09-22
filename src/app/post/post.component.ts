@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PostComponent implements OnInit {
 
+
   constructor(private formBuilder: FormBuilder, private DatabaseService: DataService) {
     
    }
