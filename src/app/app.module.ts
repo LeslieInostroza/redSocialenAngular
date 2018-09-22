@@ -36,7 +36,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { DataService } from './data.service';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { SubmenuComponent } from './submenu/submenu.component'
 
 
 const appRoutes: Routes = [
@@ -73,7 +74,7 @@ const appRoutes: Routes = [
     MessageFormComponent,
     LoginGoogleFacebookComponent,
     RegisterComponent,  
-    PostComponent   
+    PostComponent, SubmenuComponent   
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ export class FormLoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   createFormLogin() {
     this.formLogin = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],

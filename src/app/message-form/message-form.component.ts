@@ -15,8 +15,12 @@ export class MessageFormComponent implements OnInit {
  /* messageForm: FormGroup;
   messageList$ :AngularFireList<any>;
   itemRef: AngularFireObject<any>;*/
+  user: any;
   item: any = {
-    name:''
+    name:'',
+    like: 0,
+    time:'',
+
   }
   constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService) { 
     //this.createMessageForm();
@@ -28,8 +32,10 @@ export class MessageFormComponent implements OnInit {
   }
   
   agregar(){
-    this.dataservice.addItemPost(this.item); 
-    this.item.name='';   
+    let time = new Date().toLocaleString()
+    this.dataservice.addItemPost(this.item)     
+    this.item.name='';
+    this.item.time= '';   
   }
   /*createMessageForm() {
     this.messageForm = this.formBuilder.group({

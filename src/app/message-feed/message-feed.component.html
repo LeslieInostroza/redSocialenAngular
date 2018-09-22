@@ -1,17 +1,20 @@
+
 <div *ngFor="let item of items">
-{{item.name}} - {{item.id}}
+<mat-card class="postIn"> 
+<div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
+{{item.name}} - {{item.id}} - {{item.time}}
 <div>
 <button class="btnIcon" (click)="eliminar(item)">
-<i class="fas fa-trash-alt"></i>
-</button>
+<i class="fas fa-trash-alt"></i></button>
 <button class="btnIcon" (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
-<i class="fas fa-marker"></i>
-</button>
+<i class="fas fa-marker"></i></button>
 <button class="btnIcon">
-<i class="fas fa-heartbeat"></i>
-</button>
+<i class="fas fa-heartbeat"></i></button>
 </div>
+</mat-card>
 </div>
+
+
 <!--<app-message *ngFor="let message of (posts$ | async)" [name]="message.name"
           [post]="message.post"></app-message>
           <div class="example-full-width">

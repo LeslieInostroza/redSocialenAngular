@@ -18,7 +18,9 @@ export class MessageFeedComponent implements OnInit {
   */
   items:any;
   editarItem: any={
-    name:''
+    name:'',
+    like:'',
+    time:''
   }
 
   constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService) {

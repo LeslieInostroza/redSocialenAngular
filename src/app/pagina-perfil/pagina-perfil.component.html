@@ -1,6 +1,5 @@
-
-<body>
   <p>hola soy un perfil</p>
   <button type="button" *ngIf="authService.user | async" (click)="onLogout()">Logout</button>
   <button type="button" *ngIf="authService.user | async" (click)="goToWall()">Muro</button>
-</body>
+  <app-submenu></app-submenu>
+

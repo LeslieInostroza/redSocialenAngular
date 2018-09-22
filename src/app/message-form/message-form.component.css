@@ -27,6 +27,11 @@
 	outline: none;
 }
 .Welcome{
-	width: 50%;	
-	
+	width: 50%;		
+}
+.formPost{	
+	width: 100%;
+}
+.publication{
+	width: 50vh;;
 }
