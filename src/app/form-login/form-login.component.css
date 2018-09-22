@@ -20,3 +20,9 @@ input{
 	margin-left: 17%;
 	margin-top: 2%; 
 }
+@media(min-width: 425px) and (max-width: 2560px){
+	form{
+		margin-top: -10%;
+    margin-bottom: 2%;
+	}
+}

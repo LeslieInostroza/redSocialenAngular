@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-form-login',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class FormLoginComponent implements OnInit {
   formLogin: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, public snackBar: MatSnackBar, private router: Router) { this.createFormLogin();
+  constructor(private formBuilder:FormBuilder, private authService:AuthService, public snackBar: MatSnackBar, private router: Router, private location: Location) { this.createFormLogin();
   }
 
   ngOnInit() {
@@ -21,21 +22,6 @@ export class FormLoginComponent implements OnInit {
     this.formLogin = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
-    });
-  }
-  onRegister(){
-    this.authService.signup(this.formLogin.value.email, this.formLogin.value.password)
-    .then(()=>{
-    //Registro exitoso, celebremos esto!
-      this.router.navigate(['/login']);
-    })
-    .catch(()=>{
-    //Algo salió mal, avisemos mejor para que reintente
-    this.snackBar.open('Error de registro, trata otra vez'
-                        ,null/*No necesitamos botón en el aviso*/
-                        ,{
-                          duration : 3000
-                        });
     });
   }
 

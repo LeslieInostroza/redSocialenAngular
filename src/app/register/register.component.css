@@ -1,0 +1,50 @@
+div{
+  background-image: url(../../assets/img/portada2.png);
+  margin:0;
+  text-align: center;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 115vh;
+  padding-top: 1px;
+}
+.btnBack{
+  background-color: #22B4BD;
+  color: white;
+  margin-left: -84px;
+  margin-right: 45px;
+  margin-top: 23px;
+  margin-right: 152px
+}
+form{
+  position: relative;
+}
+input{
+  border: none;
+  margin-top: 50px;
+  margin: 4em auto;
+  width: 60vw;
+  height: 6vh;
+  display: block;
+}
+.btnregistrar{
+  background-color: #22B4BD;
+  color: white;
+  border: 0px;
+  margin: 4em auto;
+  width: 60vw;
+  height: 6vh;
+  display: block;
+}
+
+@media(min-width: 768px){
+  .btnBack{
+    right: 230px;
+  }
+}
+@media(min-width:1024px ) and (max-width: 2560px) {
+  .btnBack{
+    right: 287px;
+  }
+}
