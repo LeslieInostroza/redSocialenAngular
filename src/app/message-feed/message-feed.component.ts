@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
-import { DataService } from '../data.service';
+import { DataService, Item } from '../data.service';
 import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-message-feed',
@@ -12,16 +12,16 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./message-feed.component.css']
 })
 export class MessageFeedComponent implements OnInit { 
+  likeItem: any;
   /*@Output () deleteItem: EventEmitter<any> = new EventEmitter<any>();
   posts$:Observable<any>;  
   itemsRef: AngularFireList<any>;
   */
   items:any;
   editarItem: any={
-    name:'',
-    like:'',
-    time:''
+    name:'',    
   }
+  
 
   constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService) {
     //this.posts$ = this.database.list('/posts').valueChanges();    
@@ -43,6 +43,11 @@ export class MessageFeedComponent implements OnInit {
 
   agregarItemEditado(){
     this.dataservice.editarItem(this.editarItem);
+  }
+
+  likesItem(item, likes){
+    likes++
+    this.dataservice.likeItem(item, {like: likes++});
   }
   /*createDeleteItem () {  
     this.deleteItem.emit({

@@ -7,16 +7,15 @@
  background-color: rgba(54, 101, 145, 0.473);
 }
 
-@media(min-width: 425px) and (max-width: 768px){
-  .postOut{
-    width: 100%;
-    background-color: rgba(54, 101, 145, 0.473);    
+@media(min-width: 375px) and (max-width: 768px){
+  .postOutt{
+    width: 180%;        
   }
 }
 
 @media(min-width: 1024px) and (max-width: 2560px){
   .postOut{
-    width: 180%;
+    width: 325%;
     background-color: rgba(54, 101, 145, 0.473);    
   }
 }

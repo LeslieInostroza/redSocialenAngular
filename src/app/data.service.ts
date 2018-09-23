@@ -45,6 +45,13 @@ export class DataService {
     this.itemDoc= this.afs.doc<Item>(`items/${item.id}`);
     this.itemDoc.update(item);
     }
+
+  likeItem(item, likes){    
+    this.itemDoc= this.afs.doc<Item>(`items/${item.like}`);
+    this.itemDoc.update(item);
+  }
+
+  
  /* postList$: AngularFireList<any>;
   constructor(private database: AngularFireDatabase) {
     this.postList$ = this.database.list('/posts');
