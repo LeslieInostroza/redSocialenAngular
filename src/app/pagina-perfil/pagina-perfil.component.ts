@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -11,16 +12,12 @@ import { MediaMatcher } from '@angular/cdk/layout';
 })
 export class PaginaPerfilComponent implements OnInit {
   mobileQuery:  MediaQueryList;
-  private _mobileQueryListener: () => void;
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router, changeDerctorRef: ChangeDetectorRef, media: MediaMatcher) { 
-    this.mobileQuery = media.matchMedia('(max-width: 2560px)');
-    this._mobileQueryListener = () => changeDerctorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore) { 
+
   }
 
-  ngOnInit(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+  ngOnInit(){
   }
   onLogout() {
     this.authService.logout()

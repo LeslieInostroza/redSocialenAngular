@@ -1,9 +1,13 @@
 <body>
   <app-menu></app-menu>
-  <div class="behind">
-    <button type="button" *ngIf="authService.user | async" (click)="goToWall()" class="fas fa-arrow-left">Muro</button>
-    <img src="">
-    <p>PERFIL</p>
-    <button type="button" class="logout" *ngIf="authService.user | async" (click)="onLogout()">Cerrar Sesión</button>
+  <div class="profile sectionProfile">
+    <div class="centerProfile">
+      <div class="behind">
+        <button type="button" *ngIf="authService.user | async" (click)="goToWall()" class="fas fa-arrow-left btnArrowProfile"></button>
+        <i class="fas fa-user-circle"></i>
+        <p class="comment">PERFIL</p>
+        <button type="button"class="btn btn-link logout" *ngIf="authService.user | async" (click)="onLogout()">Cerrar Sesión</button>
+      </div>
+    </div>
   </div>
 </body>

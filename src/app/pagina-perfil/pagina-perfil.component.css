@@ -1,22 +1,98 @@
-p{
-  margin-top: 70px;
-  margin-left: 105px;
+.btnArrowProfile{
+	margin: none;
+	border:none;
+  background-color: transparent;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.profileFooter{
+	cursor: pointer;
+}
+.sectionProfile{
+	margin-top: 53px;
+}
+.imgProfile{
+	margin-top:20px;
+	margin-left: 0%;
+	text-align: center;
+	width: 95px;
+	border: solid 1px rgb(145, 144, 144);
+	border-radius: 95px
+}
+.pagIconProfile{
+	width: 16px;
+}	
+.logout{
+	color: #303030;
+	font-size: 11px;
+	font-family:'Roboto', sans-serif;
+	margin-left: 32%;
+	border-left: solid #dadada 1px; 
+  padding-bottom: 2px;
 }
 
-button{
-  margin-left: 105px;
+.nameUser{
+	font-size: 11px;
+	font-family:'Roboto', sans-serif;
+	text-align: left;
+	font-weight: bold;
+	margin-left: 3.5px;
 }
-.behind {
+.photoUser{
+	display: inline-block;
+  text-align: center;
+}
+.infoUser{
+	display: inline-block;
+  text-align: center;
+}
+
+.btnPublicationUser{
+	font-size: 9px;
+	font-family:'Roboto', sans-serif;
+	color: black;
+	padding:1%;
+	display: inline-block;
+	margin-left:5px;
+	margin-top: 20%;
+}
+.btn-outline-dark{
+	font-size: 11px;
+	font-family:'Roboto', sans-serif;
+	margin-top: 8px;
+	margin-left:6px;
+	width: 170px;
+	height: 25px;
+	text-align: center;
+	padding: 5px;
+}
+.rowRecipes{
+	height: 30px;
+}
+.myRecipes{
+	text-align: center;
+	font-size: 15px;
+	font-family:'Roboto', sans-serif;;
+	font-weight: bold;
+	margin-top: 5px;
+	
+}
+/**/
+*{
+  box-sizing: border-box;
+}
+.behind{
   background-color: #efefef;
   height: 25px;
   color: #303030;
+  margin-top: -108px;
 }
-.logout {
-  color: #303030;
-  font-size: 11px;
-  margin-left: 32%;
-  border-left: solid #dadada 1px;
-  padding-bottom: 2px;
-  border: 1px solid transparent;
-  padding: .375rem .75rem;
+.comment{
+  font-size: 12px;
+  margin-left: -3px;
+  display: inline-block;
+}
+i{
+  vertical-align: middle;
+  padding-right: 10px;
 }
