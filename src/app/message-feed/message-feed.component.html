@@ -1,6 +1,6 @@
 
-<div *ngFor="let item of items">
-<mat-card class="postIn"> 
+<div class="postOut" *ngFor="let item of items">
+<mat-card > 
 <div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
 {{item.name}} - {{item.id}} - {{item.time}}
 <div>

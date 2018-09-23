@@ -45,4 +45,9 @@
      line-height: 30px;
      color: #fff; 
    }
+   @media(min-width: 425px) and (max-width: 2560px){
+    .postIn{
+      width: 100%;
+    }
+  }
   

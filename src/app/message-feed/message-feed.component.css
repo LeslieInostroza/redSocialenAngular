@@ -2,7 +2,23 @@
   border: none;
   background-color: white;
 }
-.postIn{
+.postOut{
  border: black;
  background-color: rgba(54, 101, 145, 0.473);
 }
+
+@media(min-width: 425px) and (max-width: 768px){
+  .postOut{
+    width: 100%;
+    background-color: rgba(54, 101, 145, 0.473);    
+  }
+}
+
+@media(min-width: 1024px) and (max-width: 2560px){
+  .postOut{
+    width: 180%;
+    background-color: rgba(54, 101, 145, 0.473);    
+  }
+}
+
+
