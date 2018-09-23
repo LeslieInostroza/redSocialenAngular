@@ -16,7 +16,6 @@
 	margin-left: 0%;
 	text-align: center;
 	width: 95px;
-	border: solid 1px rgb(145, 144, 144);
 	border-radius: 95px
 }
 .pagIconProfile{
@@ -40,7 +39,12 @@
 }
 .photoUser{
 	display: inline-block;
-  text-align: center;
+	text-align: center;
+	position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 20px;
 }
 .infoUser{
 	display: inline-block;
@@ -68,6 +72,8 @@
 }
 .rowRecipes{
 	height: 30px;
+	border-bottom: solid 1px #dadada;
+  border-top: solid 1px #dadada;
 }
 .myRecipes{
 	text-align: center;
@@ -96,3 +102,21 @@ i{
   vertical-align: middle;
   padding-right: 10px;
 }
+
+.rowImg{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.img-thumbnail {
+	height: 100px;
+		margin-top: 10px;
+	}
+
+	@media (min-width: 375px){
+	.logout{
+		margin-left: 45%;
+		}
+	.btnPublicationUser {
+		font-size: 11px;
+	}
+	}

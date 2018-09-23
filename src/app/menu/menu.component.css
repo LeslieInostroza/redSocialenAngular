@@ -1,5 +1,6 @@
 mat-toolbar{
   background-color:  #22B4BD;
+  justify-content: space-between;
 }
 
 mat-sidenav{
@@ -23,4 +24,14 @@ img{
   vertical-align: middle;
   border-style: none;
   width: 26%;
+}
+@media (min-width: 767px) and (max-width: 1025px){
+  img{
+    width: 15%;
+  }
+}
+@media (min-width: 1027px) and (max-width: 2561px){
+  img{
+    width: 122px;
+  }
 }
