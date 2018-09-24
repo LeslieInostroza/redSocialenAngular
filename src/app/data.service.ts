@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AngularFireAuth} from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
 
 
@@ -14,10 +15,11 @@ export class DataService {
 
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
+  like: Observable<Item[]>;
 
   private itemDoc: AngularFirestoreDocument<Item>;
   
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth) {
     this.itemsCollection = afs.collection<Item>('items');
     this.items = this.itemsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -26,6 +28,12 @@ export class DataService {
         return { id, ...data };
       }))
     );
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+      console.log(user.displayName); 
+
+    });      
+
   }
 
   postItem(){
@@ -47,7 +55,13 @@ export class DataService {
     }
 
   likeItem(item, likes){    
+    //Fijate que sea el ID que quieres, ahí le estás dando los likes, no el ID
     this.itemDoc= this.afs.doc<Item>(`items/${item.like}`);
+    this.itemDoc.update(item);
+  }
+
+  userItem(item){
+    this.itemDoc= this.afs.doc<Item>(`items/${item.user.displayName}`);
     this.itemDoc.update(item);
   }
 

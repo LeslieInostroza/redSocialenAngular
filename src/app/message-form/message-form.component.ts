@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { AuthService } from '../auth.service';
+import { AngularFireAuth} from '@angular/fire/auth';
 import { LoginGoogleFacebookComponent } from '../login-google-facebook/login-google-facebook.component';
 
 
@@ -13,20 +14,29 @@ import { LoginGoogleFacebookComponent } from '../login-google-facebook/login-goo
 })
 
 export class MessageFormComponent implements OnInit {
+  @Input() post;
+  @Input() nombre;
   messageForm: FormGroup;
+  userItem: any;
   messageList$ :AngularFireList<any>;
   //itemRef: AngularFireObject<any>;*/
   user: any;
   item: any = {
     name:'',
     like: '',
+    user:''
     }
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService) { 
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
     this.createData();
     //this.createMessageForm();
     this.messageList$ = this.database.list('/others');
-    //this.itemRef = this.database.object('/posts');      
+    //this.itemRef = this.database.object('/posts');
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+      console.log(user.displayName); 
+
+    });      
   }
   
   ngOnInit() {
@@ -35,33 +45,28 @@ export class MessageFormComponent implements OnInit {
   agregar(){  
     this.dataservice.addItemPost(this.item)     
     this.item.name='';
-    this.item.LoginGoogleFacebookComponent= '';
-    let time = new Date().toLocaleString()
-    const newMen = {
-      like: this.messageForm.value.like,      
-      time: this.messageForm.value.time,     
-    };
-    this.messageList$.push(newMen);
-    this.messageForm.reset();           
+    this.item.LoginGoogleFacebookComponent= '';            
   }
 
   createData(){
     this.messageForm = this.formBuilder.group({
-      like: ['', Validators.required],
-      time: ['', Validators.required],          
+      like: ['', Validators.required],               
     });
-  }
-  addDat() {
-    let time = new Date().toLocaleString()
-    const newMen = {
-      like: this.messageForm.value.like,
-      //user: this.authService.user.email,
-      time: this.messageForm.value.time,     
-    };
-    this.messageList$.push(newMen);
-    this.messageForm.reset();
+  } 
+
+  addPublish(){
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+        this.messageList$.push({ 
+          nombre: user.displayName,          
+        })       
+    });
+    
   }
 
+ addUser(){
+ this.dataservice.userItem(this.userItem);
+ }
   /*createMessageForm() {
     this.messageForm = this.formBuilder.group({
       name: ['', Validators.required],

@@ -1,15 +1,16 @@
 
 <div class="postOutt" *ngFor="let item of items">
-<mat-card class="postOut"> 
+<mat-card class="postOut">
+<h4>{{nombre}}</h4>   
 <div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
-{{item.name}} - {{item.id}} 
+{{item.name}} 
 <div>
 <button class="btnIcon" (click)="eliminar(item)">
 <i class="fas fa-trash-alt"></i></button>
 <button class="btnIcon" (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
 <i class="fas fa-marker"></i></button>
 <button class="btnIcon" (click)="likesItem(item, item.likes)">
-<i class="fas fa-heartbeat"></i></button>-{{item.like}}
+<i class="fas fa-heartbeat"></i></button>{{item.likes}}
 </div>
 </mat-card>
 </div>
