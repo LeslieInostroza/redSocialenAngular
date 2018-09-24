@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -9,10 +13,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./pagina-perfil.component.css']
 })
 export class PaginaPerfilComponent implements OnInit {
+  profileUrl: Observable<string | null>;
+  mobileQuery:  MediaQueryList;
+  items:any;
+  editarItem: any={
+    img:''
+  }
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router) { }
+  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService) { 
+    this.dataservice.postItem().subscribe(item=>{
+      this.items = item;
+      console.log(this.items);
+    })
+  }
 
-  ngOnInit() {
+  eliminar(item){
+    this.dataservice.deleteItem(item);
+  }
+
+  ngOnInit(){
   }
   onLogout() {
     this.authService.logout()

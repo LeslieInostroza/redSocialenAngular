@@ -1,0 +1,21 @@
+<body>
+  <app-menu></app-menu>
+  <div>
+      <button class="btnBack" mat-mini-fab type="button" routerLink="/perfil">
+          <i class="fas fa-arrow-left"></i>
+      </button>
+  </div>
+  <div>
+    <input type="file" (change)="uploadFile($event)" name="img" [(ngModel)]="item.img"/>
+    <div>{{ uploadPercent | async }} %</div> 
+    <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+    <img [src]="profileUrl | async">
+ 
+  <form (ngSubmit)="agregar()">
+      <button type="submit">Publicar</button>
+    </form>
+  </div>
+</body>
+
+
+
