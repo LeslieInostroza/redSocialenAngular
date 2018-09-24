@@ -12,7 +12,7 @@ import { DataService } from '../data.service';
 export class EditarPerfilComponent implements OnInit {
   uploadPercent: Observable<number>;
   downloadUrl: Observable<string>;
-  profileUrl: Observable<string | null>;
+  profileUrl: Observable<string>;
 
   item: any = {
     img: ''

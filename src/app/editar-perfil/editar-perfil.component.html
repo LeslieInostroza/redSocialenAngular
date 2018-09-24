@@ -8,7 +8,6 @@
   <div>
     <input type="file" (change)="uploadFile($event)" name="img" [(ngModel)]="item.img"/>
     <div>{{ uploadPercent | async }} %</div> 
-    <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
     <img [src]="profileUrl | async">
  
   <form (ngSubmit)="agregar()">
