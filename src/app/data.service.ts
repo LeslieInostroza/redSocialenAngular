@@ -20,7 +20,7 @@ export class DataService {
   private itemDoc: AngularFirestoreDocument<Item>;
   
   constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth, private database: AngularFireDatabase ) {
-    this.itemsCollection = afs.collection<Item>('items');
+    this.itemsCollection = afs.collection<Item>(`items`);
     this.items = this.itemsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Item;
