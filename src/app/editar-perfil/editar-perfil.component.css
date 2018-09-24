@@ -1,0 +1,16 @@
+img{
+  height: 120px;
+  width: 168px;
+  /* margin-top: -2px; */
+  /* border-radius: 45px; */
+  /* text-align: center; */
+  margin-bottom: 10px;
+}
+input{
+  width: 4px;
+
+}
+
+div{
+  margin: 7px;
+}

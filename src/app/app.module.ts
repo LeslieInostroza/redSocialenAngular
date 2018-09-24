@@ -37,7 +37,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { DataService } from './data.service';
 import { FormsModule } from '@angular/forms';
-import { FooterMenuComponent } from './footer-menu/footer-menu.component'
+import { FooterMenuComponent } from './footer-menu/footer-menu.component';
+import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component'
 
 
 const appRoutes: Routes = [
@@ -60,6 +61,9 @@ const appRoutes: Routes = [
   {
     path:'registro',
     component: RegisterComponent
+  },{
+    path:'editarPerfil',
+    component: EditarPerfilComponent
   }
 ];
 @NgModule({
@@ -74,7 +78,7 @@ const appRoutes: Routes = [
     MessageFormComponent,
     LoginGoogleFacebookComponent,
     RegisterComponent,  
-    PostComponent, FooterMenuComponent   
+    PostComponent, FooterMenuComponent, EditarPerfilComponent   
   ],
   imports: [
     BrowserModule,
