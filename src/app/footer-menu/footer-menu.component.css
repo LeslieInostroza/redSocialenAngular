@@ -1,0 +1,40 @@
+.footer {
+	z-index: 100;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color:#DADADA;
+	text-align: center;
+	height: 40px;
+}
+
+.iconFooter{
+	text-align: center;
+	font-size: 11px;
+	font-family:'Roboto', sans-serif;
+}
+.mediaProfile{
+	width: 50px;
+	height: 30px;
+}
+.iconRecipes .iconSearch .iconFavourite .iconProfile{
+	margin-bottom: none;
+	padding-bottom: none;
+	width: 10px;
+}
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}	
+.nameIconFooter{
+	margin-top: -10px;
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+
+.nameIconFooter:hover{
+	color: blue;
+
+}

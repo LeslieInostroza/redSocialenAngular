@@ -1,5 +1,50 @@
-  <p>hola soy un perfil</p>
-  <button type="button" *ngIf="authService.user | async" (click)="onLogout()">Logout</button>
-  <button type="button" *ngIf="authService.user | async" (click)="goToWall()">Muro</button>
-  <app-submenu></app-submenu>
+<body>
+  <app-menu></app-menu>
+  <div class="profile sectionProfile">
+    <div class="centerProfile">
+      <div class="behind">
+        <button type="button" *ngIf="authService.user | async" (click)="goToWall()" class="fas fa-arrow-left btnArrowProfile"></button>
+        <i class="fas fa-user-circle"></i>
+        <p class="comment">PERFIL</p>
+        <button type="button"class="btn btn-link logout" *ngIf="authService.user | async" (click)="onLogout()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row dataUser">
+    <div class="col-4 photoUser">
+        
+      <img class="imgProfile" src="../../assets/icono/Perfil-usuario.svg" alt="Imagen de Perfil">
+      
+      <p class="nameUser">{{((authService.user | async) || {}).email}}</p>
+    </div>
+    <div class="col-8 infoUser">
+      <button type="button" class="btn btn-link btnPublicationUser">2<br>publicaciones</button>
+      <button type="button" class="btn btn-link btnPublicationUser">111<br>seguidores</button>
+      <button type="button" class="btn btn-link btnPublicationUser">250<br>seguidos</button>
+      <button type="button" class="btn btn-outline-dark"  (change)="uploadFile($event)"routerLink="/editarPerfil">Subir Imagen</button>
+    </div>
+  </div>
+  <div class="row rowRecipes">
+    <div class="col-12 myRecipes">
+      <p class="titleRecipes">Mis Imagenes</p>
+    </div>
+  </div>
+  <div class="row rowImg">
+    <div class="col-6">
+      <img class="img-thumbnail" src="../../assets/img/portada2.png" alt="Thumbnail image">
+    </div>
+    <div class="col-6">
+      <img class="img-thumbnail" src="../../assets/img/portada2.png" alt="Thumbnail image">
+    </div>
 
+      <div class="col-6" *ngFor="let item of items">
+        <img class="img-thumbnail" src="{{profileUrl | async}}" alt="Thumbnail image {{item.img}}">
+        <i class="fas fa-trash-alt" (click)="eliminar(item)"></i>
+      </div>
+  
+    </div>
+  <footer>
+    <app-footer-menu></app-footer-menu>
+  </footer>
+</body>

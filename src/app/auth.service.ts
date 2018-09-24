@@ -7,8 +7,8 @@ import * as firebase from 'firebase';
   providedIn: 'root'
 })
 export class AuthService {
-  user: any= null;;
-  email: any= null;
+  user: any = null;
+  email: any = null;
 
   constructor(private firebaseAuth: AngularFireAuth) { 
     this.user = firebaseAuth.authState;
