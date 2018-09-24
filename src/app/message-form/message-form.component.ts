@@ -23,12 +23,12 @@ export class MessageFormComponent implements OnInit {
   user: any;
   item: any = {
     name:'',
-    like:''    
+    likes:0,    
     }
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
    // this.createData();
-   this.addPost();
+   //this.addPost();
     //this.createMessageForm();
     this.messageList$ = this.database.list('/others');
     //this.itemRef = this.database.object('/posts');
@@ -46,7 +46,7 @@ export class MessageFormComponent implements OnInit {
     this.dataservice.addItemPost(this.item)     
     this.item.name='';
     this.item.LoginGoogleFacebookComponent= '';
-    //this.item.like='';            
+    this.item.likes='';            
   }
 
   /*createData(){
