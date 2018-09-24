@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 import { AngularFireAuth} from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
+import { MatInputModule } from '@angular/material/input';
 
 
 export interface Item { name: string; }
