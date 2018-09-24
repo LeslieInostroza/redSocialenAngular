@@ -29,10 +29,10 @@ export class EditarPerfilComponent implements OnInit {
   
   agregar(){
     this.dataservice.addItemPost({
-      name : "",
+      name : '',
       img : this.imgUrl
     } as Item); 
-    this.item.img='';   
+    this.item.img='';
   }
 
   uploadFile(event) {
