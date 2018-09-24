@@ -7,8 +7,8 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist",
-    "rewrites":[
+    "public": "dist/redSocialTarea",
+    "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
