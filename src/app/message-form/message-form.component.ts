@@ -28,7 +28,7 @@ export class MessageFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
    // this.createData();
-   this.addPublish();
+   this.addPost();
     //this.createMessageForm();
     this.messageList$ = this.database.list('/others');
     //this.itemRef = this.database.object('/posts');
@@ -55,7 +55,7 @@ export class MessageFormComponent implements OnInit {
     });
   } 
 */
-  addPublish(){
+  addPost(){
     this.afAuth.authState.subscribe(user => {
       if(user) 
         this.messageList$.push({ 

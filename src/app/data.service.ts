@@ -16,7 +16,7 @@ export class DataService {
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
   like: Observable<Item[]>;
-
+  messageList$: AngularFireList<any>;
   private itemDoc: AngularFirestoreDocument<Item>;
   
   constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth, private database: AngularFireDatabase ) {
@@ -32,8 +32,8 @@ export class DataService {
       if(user) 
       console.log(user.displayName); 
 
-    });      
-
+    });
+    this.messageList$ = this.database.list('/others'); 
   }
 
   postItem(){
