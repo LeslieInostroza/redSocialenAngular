@@ -52,9 +52,8 @@ export class MessageFeedComponent implements OnInit {
     this.dataservice.editarItem(this.editarItem);
   }
 
-  likesItem(id, likes){ 
-    likes++   
-    this.dataservice.likeItem(id, {like: likes++})    
+  likesItem(item){ 
+    this.dataservice.likeItem(item)    
   }
 
   

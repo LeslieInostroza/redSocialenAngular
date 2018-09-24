@@ -6,7 +6,11 @@ import { AngularFireAuth} from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
 
 
-export interface Item { name: string; }
+export interface Item { 
+  name: string;
+  likes:number;
+  id:string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -54,11 +58,14 @@ export class DataService {
     this.itemDoc.update(item);
     }
 
-  likeItem(object, id){    
+  likeItem(item:Item){    
     //Fijate que sea el ID que quieres, ahí le estás dando los likes, no el ID
-    this.database.object(`others/${id}`).update(object);
-    //this.itemDoc= this.afs.doc<Item>(`items/${like.id}`);
-    //this.itemDoc.update(like);
+    //this.database.object(`others/${id}`).update(object);
+    item.likes++;
+    this.itemDoc= this.afs.doc<Item>(`items/${item.id}`);
+    this.itemDoc.update(item);
+    //this.itemDoc= this.afs.doc(`others/${key}}`);
+    //this.itemDoc.update(key);
   }
 
   userItem(item){
