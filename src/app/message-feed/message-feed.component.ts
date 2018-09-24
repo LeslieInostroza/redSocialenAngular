@@ -1,31 +1,41 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject, AngularFireAction, AngularFireList } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
-import { DataService } from '../data.service';
+import { DataService, Item } from '../data.service';
+import { AngularFireAuth} from '@angular/fire/auth';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-message-feed',
   templateUrl: './message-feed.component.html',
   styleUrls: ['./message-feed.component.css']
 })
 export class MessageFeedComponent implements OnInit { 
+  @Input() nombre: string;    
+  likeItem: any={
+    like:1,
+  }
   /*@Output () deleteItem: EventEmitter<any> = new EventEmitter<any>();
   posts$:Observable<any>;  
   itemsRef: AngularFireList<any>;
   */
   items:any;
   editarItem: any={
-    name:''
+    name:'',        
   }
+  updateData: any={
+    likes: 1,
+  }
+  
 
-  constructor(private database:AngularFireDatabase, private dataservice: DataService) {
+  constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) {
     //this.posts$ = this.database.list('/posts').valueChanges();    
     this.dataservice.postItem().subscribe(item=>{
       this.items = item;
-      console.log(this.items);
-    })
+      console.log(this.items);      
+    });      
  }
   ngOnInit() {
   }
@@ -41,6 +51,14 @@ export class MessageFeedComponent implements OnInit {
   agregarItemEditado(){
     this.dataservice.editarItem(this.editarItem);
   }
+
+  likesItem(id, likes){ 
+    likes++   
+    this.dataservice.likeItem(id, {like: likes++})    
+  }
+
+  
+
   /*createDeleteItem () {  
     this.deleteItem.emit({
       delete: this.itemsRef.remove(),

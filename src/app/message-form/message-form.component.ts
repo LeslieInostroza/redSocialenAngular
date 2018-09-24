@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { AuthService } from '../auth.service';
+import { AngularFireAuth} from '@angular/fire/auth';
+import { LoginGoogleFacebookComponent } from '../login-google-facebook/login-google-facebook.component';
 
 
 @Component({
@@ -10,26 +12,63 @@ import { AuthService } from '../auth.service';
   templateUrl: './message-form.component.html',
   styleUrls: ['./message-form.component.css']
 })
+
 export class MessageFormComponent implements OnInit {
- /* messageForm: FormGroup;
+  @Input() post;
+  @Input() nombre;
+  messageForm: FormGroup;
+  userItem: any;
   messageList$ :AngularFireList<any>;
-  itemRef: AngularFireObject<any>;*/
+  //itemRef: AngularFireObject<any>;*/
+  user: any;
   item: any = {
-    name:''
-  }
-  constructor(private database:AngularFireDatabase, private dataservice: DataService) { 
+    name:'',
+    like:''    
+    }
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
+   // this.createData();
+   this.addPublish();
     //this.createMessageForm();
-    //this.messageList$ = this.database.list('/posts');
-    //this.itemRef = this.database.object('/posts');      
+    this.messageList$ = this.database.list('/others');
+    //this.itemRef = this.database.object('/posts');
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+      console.log(user.displayName); 
+
+    });      
   }
   
   ngOnInit() {
   }
   
-  agregar(){
-    this.dataservice.addItemPost(this.item); 
-    this.item.name='';   
+  agregar(){  
+    this.dataservice.addItemPost(this.item)     
+    this.item.name='';
+    this.item.LoginGoogleFacebookComponent= '';
+    //this.item.like='';            
   }
+
+  /*createData(){
+    this.messageForm = this.formBuilder.group({
+      like: ['', Validators.required],               
+    });
+  } 
+*/
+  addPublish(){
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+        this.messageList$.push({ 
+          nombre: user.displayName,
+          likes:0,         
+        })       
+    });
+    
+  }
+
+ addUser(){
+ this.dataservice.userItem(this.userItem);
+ }
   /*createMessageForm() {
     this.messageForm = this.formBuilder.group({
       name: ['', Validators.required],

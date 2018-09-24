@@ -1,7 +1,8 @@
-
-<form (ngSubmit)="agregar()">
-  <input type="text" placeholder="Ingresa tu post" name="name" [(ngModel)]="item.name">
-  <button type="submit">Publicar</button>
+<img class="photouser" src="../../assets/icono/Perfil-usuario.svg">
+<div class="Welcome" *ngIf="authService.user | async">Bienvenido: {{((authService.user | async) || {}).email}}</div>
+<form (ngSubmit)="agregar()">  
+  <input type="text" placeholder="Añade un comentario..." class="publication" name="name" [(ngModel)]="item.name">
+  <button type="submit" class="btnMessage" (click)="addPublish()">PUBLICAR</button>
 </form>
 <!--<form [formGroup]="messageForm" (ngSubmit)="addMessage()">        
         <input #name type="text" formControlName="name">       

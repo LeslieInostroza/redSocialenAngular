@@ -1,0 +1,53 @@
+.title{
+  font-size: 5%;
+  }
+  .titleChicken{
+    font-size: 15px;
+    font-family:'Roboto', sans-serif;;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 8px;
+    margin-top: 10px;	
+    margin-bottom: 0%;
+  }
+  .titlePortion{
+    font-size: 12px;
+    font-family:'Roboto', sans-serif;;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 8px;
+    margin-bottom: 0%;
+    display:block;
+  }
+
+  .iconFood {
+    background-color: #dadada;
+    height: 29px;
+    margin-top: 4px;
+    text-align: center;
+  }
+  .iconNoMilk, .iconNoGluten, .iconVegetariano {
+  width: 25px;
+  margin-top: 2px;
+  margin-left: 25px;
+  }
+
+  .iconPasta, .iconMeet{
+    width: 25px;
+    margin-top: 2px;
+    }
+  .carousel-indicators-numbers li {  
+     margin: 0 3px;
+     width: 10px;
+     height: 10px;
+     border: none;
+     border-radius: 100%;
+     line-height: 30px;
+     color: #fff; 
+   }
+   @media(min-width: 425px) and (max-width: 2560px){
+    .postIn{
+      width: 100%;
+    }
+  }
+  

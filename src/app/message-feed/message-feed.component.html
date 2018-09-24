@@ -1,19 +1,25 @@
-<p>hola soy la vista</p>
-<div *ngFor="let item of items">
+
+<div class="postOutt" *ngFor="let item of items">
+<mat-card class="postOut">
+<h4>{{nombre}}</h4>   
+<div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
 {{item.name}} - {{item.id}}
-<div (click)="eliminar(item)">
-<i class="fas fa-trash-alt"></i>
+<div>
+<button class="btnIcon" (click)="eliminar(item)">
+<i class="fas fa-trash-alt"></i></button>
+<button class="btnIcon" (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
+<i class="fas fa-marker"></i></button>
+<button class="btnIcon" (click)="likesItem(id, likes)">
+<i class="fas fa-heartbeat"></i></button>{{item.likes}}
 </div>
-<div (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
-<i class="fas fa-marker"></i>
+</mat-card>
 </div>
-<i class="fas fa-heartbeat"></i>
-</div>
+
+
 <!--<app-message *ngFor="let message of (posts$ | async)" [name]="message.name"
           [post]="message.post"></app-message>
           <div class="example-full-width">
-            <button (click)="delete()">Delete</button>-->
-                
+            <button (click)="delete()">Delete</button>-->                
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
