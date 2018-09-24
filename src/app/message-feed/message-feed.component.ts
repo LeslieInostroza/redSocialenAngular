@@ -13,16 +13,20 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./message-feed.component.css']
 })
 export class MessageFeedComponent implements OnInit { 
-  @Input() nombre: string; 
-   
-  likeItem: any;
+  @Input() nombre: string;    
+  likeItem: any={
+    like:1,
+  }
   /*@Output () deleteItem: EventEmitter<any> = new EventEmitter<any>();
   posts$:Observable<any>;  
   itemsRef: AngularFireList<any>;
   */
   items:any;
   editarItem: any={
-    name:'',    
+    name:'',        
+  }
+  updateData: any={
+    likes: 1,
   }
   
 
@@ -48,9 +52,9 @@ export class MessageFeedComponent implements OnInit {
     this.dataservice.editarItem(this.editarItem);
   }
 
-  likesItem(item, likes){
-    likes++
-    this.dataservice.likeItem(item, {like: likes++});
+  likesItem(id, likes){ 
+    likes++   
+    this.dataservice.likeItem(id, {like: likes++})    
   }
 
   

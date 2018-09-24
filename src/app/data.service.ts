@@ -19,7 +19,7 @@ export class DataService {
 
   private itemDoc: AngularFirestoreDocument<Item>;
   
-  constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth) {
+  constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth, private database: AngularFireDatabase ) {
     this.itemsCollection = afs.collection<Item>('items');
     this.items = this.itemsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -54,10 +54,11 @@ export class DataService {
     this.itemDoc.update(item);
     }
 
-  likeItem(item, likes){    
+  likeItem(object, id){    
     //Fijate que sea el ID que quieres, ahí le estás dando los likes, no el ID
-    this.itemDoc= this.afs.doc<Item>(`items/${item.like}`);
-    this.itemDoc.update(item);
+    this.database.object(`others/${id}`).update(object);
+    //this.itemDoc= this.afs.doc<Item>(`items/${like.id}`);
+    //this.itemDoc.update(like);
   }
 
   userItem(item){

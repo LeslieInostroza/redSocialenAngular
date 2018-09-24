@@ -3,13 +3,13 @@
 <mat-card class="postOut">
 <h4>{{nombre}}</h4>   
 <div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
-{{item.name}} 
+{{item.name}} - {{item.id}}
 <div>
 <button class="btnIcon" (click)="eliminar(item)">
 <i class="fas fa-trash-alt"></i></button>
 <button class="btnIcon" (click)="editar(item)" data-toggle="modal" data-target="#exampleModal">
 <i class="fas fa-marker"></i></button>
-<button class="btnIcon" (click)="likesItem(item, item.likes)">
+<button class="btnIcon" (click)="likesItem(id, likes)">
 <i class="fas fa-heartbeat"></i></button>{{item.likes}}
 </div>
 </mat-card>
