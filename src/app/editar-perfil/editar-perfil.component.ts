@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { DataService } from '../data.service';
+import { DataService, Item} from '../data.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -17,6 +17,8 @@ export class EditarPerfilComponent implements OnInit {
   item: any = {
     img: ''
   }
+
+  imgUrl:string;
   
   constructor(private storage: AngularFireStorage, private dataservice: DataService) { 
     
@@ -26,8 +28,8 @@ export class EditarPerfilComponent implements OnInit {
   }
   
   agregar(){
-    this.dataservice.addItemPost(this.item); 
-    this.item.img='';   
+    this.dataservice.addItemPost(this.item);
+    this.item.img='';
   }
 
   uploadFile(event) {
@@ -39,6 +41,8 @@ export class EditarPerfilComponent implements OnInit {
    console.log(task)
      this.uploadPercent = task.percentageChanges();
      task.snapshotChanges().pipe(finalize(() => this.downloadUrl = fileRef.getDownloadURL()))
-     .subscribe()
+     .subscribe((url)=>{
+        this.imgUrl = url.downloadURL;
+     })
  }
 }

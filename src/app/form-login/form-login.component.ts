@@ -13,7 +13,7 @@ import { Location } from '@angular/common';
 export class FormLoginComponent implements OnInit {
   formLogin: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private authService:AuthService, public snackBar: MatSnackBar, private router: Router, private location: Location) { this.createFormLogin();
+  constructor(private formBuilder:FormBuilder, public authService:AuthService, public snackBar: MatSnackBar, private router: Router, private location: Location) { this.createFormLogin();
   }
 
   ngOnInit() {

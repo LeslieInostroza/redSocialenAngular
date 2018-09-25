@@ -22,7 +22,7 @@
       <button type="button" class="btn btn-link btnPublicationUser">2<br>publicaciones</button>
       <button type="button" class="btn btn-link btnPublicationUser">111<br>seguidores</button>
       <button type="button" class="btn btn-link btnPublicationUser">250<br>seguidos</button>
-      <button type="button" class="btn btn-outline-dark"  (change)="uploadFile($event)"routerLink="/editarPerfil">Subir Imagen</button>
+      <button type="button" class="btn btn-outline-dark" routerLink="/editarPerfil">Subir Imagen</button>
     </div>
   </div>
   <div class="row rowRecipes">
@@ -37,7 +37,7 @@
     <div class="col-6">
       <img class="img-thumbnail" src="../../assets/img/portada2.png" alt="Thumbnail image">
     </div>
-
+    <img >
       <div class="col-6" *ngFor="let item of items">
         <img class="img-thumbnail" src="{{profileUrl | async}}" alt="Thumbnail image {{item.img}}">
         <i class="fas fa-trash-alt" (click)="eliminar(item)"></i>

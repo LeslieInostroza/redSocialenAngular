@@ -20,7 +20,7 @@ export class PaginaPerfilComponent implements OnInit {
     img:''
   }
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService) { 
+  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService) { 
     this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);
