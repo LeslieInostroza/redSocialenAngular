@@ -23,7 +23,7 @@ export class MessageFeedComponent implements OnInit {
   */
   items:any;
   editarItem: any={
-    name:'',        
+    post:'',        
   }
   updateData: any={
     likes: 1,
