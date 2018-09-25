@@ -25,7 +25,8 @@ export class MessageFormComponent implements OnInit {
     post:'',
     likes:0,
     users:'', 
-    date: '',   
+    date: '',
+    //agregar img aqui   
     }
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
@@ -67,6 +68,7 @@ export class MessageFormComponent implements OnInit {
         let users = user.displayName;                
         this.item.date = date;
         this.item.users = users;
+        //agregar aqui para subir imagen
     });
     
   }
