@@ -13,23 +13,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pagina-perfil.component.css']
 })
 export class PaginaPerfilComponent implements OnInit {
-  profileUrl: Observable<string | null>;
+  /*profileUrl: Observable<string | null>;
   mobileQuery:  MediaQueryList;
   items:any;
   editarItem: any={
     img:''
-  }
+  }*/
 
   constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService) { 
-    this.dataservice.postItem().subscribe(item=>{
+    /*this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);
-    })
+    })*/
   }
 
-  eliminar(item){
+  /*eliminar(item){
     this.dataservice.deleteItem(item);
-  }
+  }*/
 
   ngOnInit(){
   }

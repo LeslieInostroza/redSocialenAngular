@@ -10,7 +10,7 @@ import { DataService, Item} from '../data.service';
   styleUrls: ['./editar-perfil.component.css']
 })
 export class EditarPerfilComponent implements OnInit {
-  uploadPercent: Observable<number>;
+  /*uploadPercent: Observable<number>;
   downloadUrl: Observable<string>;
   profileUrl: Observable<string>;
 
@@ -18,7 +18,7 @@ export class EditarPerfilComponent implements OnInit {
     img: ''
   }
 
-  imgUrl:string;
+  imgUrl:string;*/
   
   constructor(private storage: AngularFireStorage, private dataservice: DataService) { 
     
@@ -27,7 +27,7 @@ export class EditarPerfilComponent implements OnInit {
   ngOnInit() {
   }
   
-  agregar(){
+  /*agregar(){
     this.dataservice.addItemPost(this.item);
     this.item.img='';
   }
@@ -44,5 +44,5 @@ export class EditarPerfilComponent implements OnInit {
      .subscribe((url)=>{
         this.imgUrl = url.downloadURL;
      })
- }
+  }*/
 }
