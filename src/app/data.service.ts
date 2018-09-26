@@ -8,9 +8,11 @@ import { MatInputModule } from '@angular/material/input';
 
 
 export interface Item { 
-  name: string;
+  post: string;
   likes:number;
   id:string;
+  users:string;
+  date:string;
 }
 
 @Injectable({
@@ -69,9 +71,9 @@ export class DataService {
     //this.itemDoc.update(key);
   }
 
-  userItem(item){
-    this.itemDoc= this.afs.doc<Item>(`items/${item.user.displayName}`);
-    this.itemDoc.update(item);
+ 
+    //this.itemDoc= this.afs.doc<Item>(`items/${item.user.displayName}`);
+    //this.itemDoc.update(item);
   }
 
   
@@ -92,4 +94,4 @@ export class DataService {
     this.database.object(`posts/${key}`).update(object);
   }
   */
-}
+
