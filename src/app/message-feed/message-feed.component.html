@@ -3,7 +3,7 @@
 <mat-card class="postOut">
     <img class="userImg"src="{{item.photoUrl}}">
 <h4>{{item.users}}</h4>   
-<div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
+
 {{item.post}} 
 <div>
 <button class="btnIcon" (click)="eliminar(item)">
