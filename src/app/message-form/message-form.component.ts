@@ -30,7 +30,7 @@ export class MessageFormComponent implements OnInit {
     //agregar img aqui   
     }
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
+  constructor(private formBuilder: FormBuilder, public authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
    // this.createData();
    //this.addPost();
     //this.createMessageForm();

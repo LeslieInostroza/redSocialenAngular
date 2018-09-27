@@ -1,18 +1,1 @@
 
-  <div class="col-9">
-      <h4>{{post}}</h4>  
-</div>
-<div class="row">
-  <div class="col" id="container-post">
-      <form [formGroup]="editContent" (ngSubmit)="addMessage()">
-          <textarea #content formControlName="content" class="col-12 col-md-12" [attr.disabled]="enableEditPost ? '' : null" [style.height.px]="post.contenido.length"></textarea>
-          <div class="d-flex justify-content-between align-items-center box-icons">
-              <span>{{post.time}}</span>
-              <span><i class="fas fa-thumbs-up iconPost " (click)="addLike(postId, post.likes) "></i>{{post.likes}}</span>
-              <i class="far fa-edit iconPost " (click)="enableEdit(postId) "></i>
-              <i class="far fa-trash-alt iconPost " (click)="deletePost(postId) "></i>
-          </div>
-          <button *ngIf="!enableEditPost" type="submit">editar</button>
-      </form>
-  </div>
-</div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   items: Observable<any[]>;
-  constructor(db: AngularFirestore, private router: Router, private authService: AuthService) {
+  constructor(db: AngularFirestore, private router: Router, private authService: AuthService, private dataservice: DataService) {
     this.items = db.collection('items').valueChanges();
   } 
 

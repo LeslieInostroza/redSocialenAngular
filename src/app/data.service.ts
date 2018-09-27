@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 import { AngularFireAuth} from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
+import { MatInputModule } from '@angular/material/input';
 
 
 export interface Item { 
@@ -39,7 +40,7 @@ export class DataService {
       console.log(user.displayName); 
 
     });
-    this.messageList$ = this.database.list('/others'); 
+    
   }
 
   postItem(){

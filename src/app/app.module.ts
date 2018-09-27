@@ -40,6 +40,8 @@ import { FormsModule } from '@angular/forms';
 import { SubmenuComponent } from './submenu/submenu.component'
 import { FooterMenuComponent } from './footer-menu/footer-menu.component';
 import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+import { PerfilFeedComponent } from './perfil-feed/perfil-feed.component';
+import { DataImgPerfilService } from './data-img-perfil.service';
 
 
 const appRoutes: Routes = [
@@ -84,7 +86,8 @@ const appRoutes: Routes = [
     PostComponent, 
     FooterMenuComponent,
     EditarPerfilComponent,
-    MessageComponent   
+    MessageComponent,
+    PerfilFeedComponent   
   ],
   imports: [
     BrowserModule,
@@ -108,7 +111,7 @@ const appRoutes: Routes = [
     AngularFireMessagingModule,
     FormsModule
   ],
-  providers: [AuthService, DataService],
+  providers: [AuthService, DataService, DataImgPerfilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

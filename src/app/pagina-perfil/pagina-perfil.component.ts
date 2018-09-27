@@ -6,6 +6,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
+import { DataImgPerfilService } from '../data-img-perfil.service';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -13,23 +14,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pagina-perfil.component.css']
 })
 export class PaginaPerfilComponent implements OnInit {
-  profileUrl: Observable<string | null>;
+  /*profileUrl: Observable<string | null>;
   mobileQuery:  MediaQueryList;
   items:any;
   editarItem: any={
     img:''
-  }
+  }*/
 
-  constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService) { 
-    this.dataservice.postItem().subscribe(item=>{
+  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService, private dataimageservice: DataImgPerfilService) { 
+    /*this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);
-    })
+    })*/
   }
 
-  eliminar(item){
+  /*eliminar(item){
     this.dataservice.deleteItem(item);
-  }
+  }*/
 
   ngOnInit(){
   }
