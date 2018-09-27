@@ -1,0 +1,9 @@
+
+<div *ngIf ="images?.length > 0">
+    <div class="col-6" *ngFor="let image of images">
+        <img class="img-thumbnail" src="{{image.imgGaleria}}" alt="Thumbnail image">
+        
+       <!--  <a [href]="downloadUrl | async">{{ downloadUrl | async }}</a> --> 
+        <i class="fas fa-trash-alt" (click)="eliminar(image)"></i> 
+    </div>
+</div>

@@ -40,7 +40,7 @@ export class DataService {
       console.log(user.displayName); 
 
     });
-    this.messageList$ = this.database.list('/others'); 
+    
   }
 
   postItem(){

@@ -5,20 +5,15 @@
           <i class="fas fa-arrow-left"></i>
       </button>
   </div>
-  
-    <!--  
-      <div>
-        <input type="file" (change)="uploadFile($event)" name="img" [(ngModel)]="item.img"/>
-    <div>{{ uploadPercent | async }} %</div> 
-    <img [src]="profileUrl | async">
- 
+           
   <form (ngSubmit)="agregar()">
       <button type="submit">Publicar</button>
+      <input type="file" (change)="uploadFile($event)" name="img" [(ngModel)]="image.img"/>
+      <div>{{ uploadPercent | async }} %</div> 
+      <a [href]="downloadUrl | async" target="_blank">{{ downloadUrl | async }}</a>
     </form>
-  </div>
 
-    -->
-    
+    <img class="img-thumbnail" src="{{image.imgGaleria}}" alt="Thumbnail image">
 </body>
 
 

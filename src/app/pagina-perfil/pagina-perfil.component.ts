@@ -6,6 +6,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
+import { DataImgPerfilService } from '../data-img-perfil.service';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -20,7 +21,7 @@ export class PaginaPerfilComponent implements OnInit {
     img:''
   }*/
 
-  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService) { 
+  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService, private dataimageservice: DataImgPerfilService) { 
     /*this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);

@@ -12,8 +12,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './message-feed.component.html',
   styleUrls: ['./message-feed.component.css']
 })
-export class MessageFeedComponent implements OnInit { 
-  @Input() nombre: string;    
+export class MessageFeedComponent implements OnInit {  
   likeItem: any={
     like:1,
   }
