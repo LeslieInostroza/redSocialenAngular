@@ -4,7 +4,7 @@
     <img class="userImg"src="{{item.photoUrl}}">
 <h4>{{item.users}}</h4>   
 <div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
-{{item.post}} - {{item.id}}
+{{item.post}} 
 <div>
 <button class="btnIcon" (click)="eliminar(item)">
 <i class="fas fa-trash-alt"></i></button>
