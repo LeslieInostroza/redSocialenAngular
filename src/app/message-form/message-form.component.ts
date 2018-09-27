@@ -26,6 +26,7 @@ export class MessageFormComponent implements OnInit {
     likes:0,
     users:'', 
     date: '',
+    photoUrl: '',
     //agregar img aqui   
     }
 
@@ -65,9 +66,11 @@ export class MessageFormComponent implements OnInit {
       console.log(user.displayName); 
       let time = new Date().getTime();
         let date = new Date(time).toLocaleString();
-        let users = user.displayName;                
+        let users = user.displayName;
+        let imgUser = user.photoURL;               
         this.item.date = date;
         this.item.users = users;
+        this.item.photoUrl = imgUser;        
         //agregar aqui para subir imagen
     });
     
