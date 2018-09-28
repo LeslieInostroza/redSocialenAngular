@@ -44,3 +44,14 @@
 		height: 5em;
 	}
 }
+.userImg{
+	height: 50px;
+  width: 50px;
+  float: left;
+  border-radius: 50%;
+  border-color: transparent;
+  border-width: 0px;
+  padding: 0px;
+  margin-left: 2%;
+  margin-right: 2%;
+}

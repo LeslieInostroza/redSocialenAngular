@@ -32,7 +32,7 @@ export class MessageFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, public authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) { 
    // this.createData();
-   //this.addPost();
+   this.addPost();
     //this.createMessageForm();
     this.messageList$ = this.database.list('/others');
     //this.itemRef = this.database.object('/posts');

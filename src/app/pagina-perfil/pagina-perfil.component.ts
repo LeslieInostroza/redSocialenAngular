@@ -7,6 +7,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import { DataImgPerfilService } from '../data-img-perfil.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-pagina-perfil',
@@ -17,11 +19,15 @@ export class PaginaPerfilComponent implements OnInit {
   /*profileUrl: Observable<string | null>;
   mobileQuery:  MediaQueryList;
   items:any;
-  editarItem: any={
-    img:''
-  }*/
-
-  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService, private dataimageservice: DataImgPerfilService) { 
+  */
+ @Input() photoUrl: string;
+ @Input() users: string;
+  item: any={
+    photoUrl: '',
+    users:''
+  }
+  
+  constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService, private dataimageservice: DataImgPerfilService,public afAuth: AngularFireAuth, private database:AngularFireDatabase ) { 
     /*this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);
