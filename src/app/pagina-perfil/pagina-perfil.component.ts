@@ -19,19 +19,22 @@ export class PaginaPerfilComponent implements OnInit {
   /*profileUrl: Observable<string | null>;
   mobileQuery:  MediaQueryList;
   items:any;
-  */  
- item:any={
-   photoUrl:'',
-   users: ''
- }
-  
+  */
+ //@Input() photoUrl: string;
+ //@Input() users: string;
+
+  user: any;
+  item: any={
+    photoUrl: '',
+    users:''
+  }
   
   constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService, private dataimageservice: DataImgPerfilService,public afAuth: AngularFireAuth, private database:AngularFireDatabase ) { 
     /*this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);
     })*/
-    
+    this.addPost();
   }
 
   /*eliminar(item){
@@ -60,4 +63,17 @@ export class PaginaPerfilComponent implements OnInit {
     this.router.navigate(['/muro']);
   }
 
+
+  addPost(){
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+      console.log(user.displayName); 
+        let users = user.displayName;
+        let imgUser = user.photoURL;               
+        this.item.users = users;
+        this.item.photoUrl = imgUser;        
+        //agregar aqui para subir imagen
+    });
+    
+  }
 }
