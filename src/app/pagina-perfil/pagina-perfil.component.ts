@@ -20,8 +20,10 @@ export class PaginaPerfilComponent implements OnInit {
   mobileQuery:  MediaQueryList;
   items:any;
   */
- @Input() photoUrl: string;
- @Input() users: string;
+ //@Input() photoUrl: string;
+ //@Input() users: string;
+
+  user: any;
   item: any={
     photoUrl: '',
     users:''
@@ -32,6 +34,7 @@ export class PaginaPerfilComponent implements OnInit {
       this.items = item;
       console.log(this.items);
     })*/
+    this.addPost();
   }
 
   /*eliminar(item){
@@ -60,4 +63,17 @@ export class PaginaPerfilComponent implements OnInit {
     this.router.navigate(['/muro']);
   }
 
+
+  addPost(){
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+      console.log(user.displayName); 
+        let users = user.displayName;
+        let imgUser = user.photoURL;               
+        this.item.users = users;
+        this.item.photoUrl = imgUser;        
+        //agregar aqui para subir imagen
+    });
+    
+  }
 }
