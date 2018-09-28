@@ -14,9 +14,10 @@
   <div class="row dataUser">
     <div class="col-4 photoUser">
         
-      <img class="imgProfile" src="../../assets/icono/Perfil-usuario.svg" alt="Imagen de Perfil">
-      
+      <!--<img class="imgProfile" src="../../assets/icono/Perfil-usuario.svg" alt="Imagen de Perfil">-->
+      <img class="imgProfile" src="{{item.photoUrl}}" alt="Foto perfil">
       <p class="nameUser">{{((authService.user | async) || {}).email}}</p>
+      <h4>{{item.users}}</h4>
     </div>
     <div class="col-8 infoUser">
       <button type="button" class="btn btn-link btnPublicationUser">2<br>publicaciones</button>

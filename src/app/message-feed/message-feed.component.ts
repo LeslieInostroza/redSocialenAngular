@@ -13,9 +13,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./message-feed.component.css']
 })
 export class MessageFeedComponent implements OnInit {  
-  likeItem: any={
-    like:1,
-  }
   /*@Output () deleteItem: EventEmitter<any> = new EventEmitter<any>();
   posts$:Observable<any>;  
   itemsRef: AngularFireList<any>;
@@ -24,9 +21,7 @@ export class MessageFeedComponent implements OnInit {
   editarItem: any={
     post:'',        
   }
-  updateData: any={
-    likes: 1,
-  }
+  
   
 
   constructor(private authService: AuthService, private database:AngularFireDatabase, private dataservice: DataService, public afAuth: AngularFireAuth) {

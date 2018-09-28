@@ -1,5 +1,7 @@
-<img class="photouser" src="../../assets/icono/Perfil-usuario.svg">
+  <!--  <img class="photouser" src="../../assets/icono/Perfil-usuario.svg">-->
+<img class="userImg" src="{{item.photoUrl}}" alt="Foto perfil">
 <div class="Welcome" *ngIf="authService.user | async">Bienvenido: {{((authService.user | async) || {}).email}}</div>
+<h4>{{item.users}}</h4>
 <form (ngSubmit)="agregar()">  
   <input type="text" placeholder="Añade un comentario..." class="publication" name="post" [(ngModel)]="item.post">
   <button type="submit" class="btnMessage" (click)="addPost()">PUBLICAR</button>

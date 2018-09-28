@@ -1,9 +1,8 @@
 
 <div class="postOutt" *ngFor="let item of items">
 <mat-card class="postOut">
-    <img class="userImg"src="{{item.photoUrl}}">
+<img class="userImg"src="{{item.photoUrl}}" alt="Foto de perfil">
 <h4>{{item.users}}</h4>   
-<div class="Welcome" *ngIf="authService.user | async">{{((authService.user | async) || {}).email}}</div>
 {{item.post}} 
 <div>
 <button class="btnIcon" (click)="eliminar(item)">
