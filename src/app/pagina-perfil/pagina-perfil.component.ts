@@ -19,19 +19,19 @@ export class PaginaPerfilComponent implements OnInit {
   /*profileUrl: Observable<string | null>;
   mobileQuery:  MediaQueryList;
   items:any;
-  */
- @Input() photoUrl: string;
- @Input() users: string;
-  item: any={
-    photoUrl: '',
-    users:''
-  }
+  */  
+ item:any={
+   photoUrl:'',
+   users: ''
+ }
+  
   
   constructor(public authService: AuthService, private snackBar: MatSnackBar, private router: Router, db: AngularFirestore, private dataservice: DataService, private dataimageservice: DataImgPerfilService,public afAuth: AngularFireAuth, private database:AngularFireDatabase ) { 
     /*this.dataservice.postItem().subscribe(item=>{
       this.items = item;
       console.log(this.items);
     })*/
+    
   }
 
   /*eliminar(item){
