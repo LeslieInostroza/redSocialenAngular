@@ -14,8 +14,8 @@ import { LoginGoogleFacebookComponent } from '../login-google-facebook/login-goo
 })
 
 export class MessageFormComponent implements OnInit {
-  @Input() post;
-  @Input() nombre;
+ // @Input() post;
+  //@Input() nombre;
   messageForm: FormGroup;
   userItem: any;
   messageList$ :AngularFireList<any>;
