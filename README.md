@@ -22,23 +22,6 @@ Los elementos basicos de esta red social son:
 4.- Los objetivos de los usuarios son el de poder encontar la receta deseada de forma rapida y acertada.
 5.- El producto contiene funciones como es de publicar tu propia receta colocada en una categoria previa y esta puede ser evaluada y comentada por otros usuarios.
 
-## Diseño de interfaz de usuario 
-
-La aplicación, se  basa en un estudio previo, teniendo en cuenta las necesidades y los gustos de los usuarios a los cuales se entrevisto.
-
-la pagina contiene en su primera pantalla, un login de ususario y tambien se puede registrar previamente. Consta tambien de un login con Facebook y con Google.
-
-![replica](/src/assets/img/reg.png)
-
-La siguiente pantalla es la de "muro" en la que se puede ver un menu de tipo "hamburgesa" que contiene las rutas para ir a la seccion de perfil, tambien incluye un carrusel de imagenes y por ultimo la seccion de comentarios.
-
-![replica](/src/assets/img/muro.png)
-
-![replica](/src/assets/img/comentarios.png)
-
-La tercera y ultima pantalla contiene la informacion del perfil, con la imagen del usuario y su nombre, y tambien en la parte de abajo se puede ver una galeria de imagenes subidas por el mismo usuario.
-
-![replica](/src/assets/img/perfil.png)
 
 ## Desarrollado para 
 [Laboratoria](http://laboratoria.la)
