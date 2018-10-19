@@ -42,10 +42,5 @@ La tercera y ultima pantalla contiene la informacion del perfil, con la imagen d
 ![replica](/src/assets/img/perfil.png)
 
 
-## La aplicación
-
-se puede ingresar a la aplicacion directamente presionando el siguiente link haciendo click [aquí](https://redsocialproyectoangular.firebaseapp.com)
-
-
 ## Desarrollado para 
 [Laboratoria](http://laboratoria.la)
