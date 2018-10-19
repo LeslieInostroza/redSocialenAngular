@@ -41,6 +41,5 @@ La tercera y ultima pantalla contiene la informacion del perfil, con la imagen d
 
 ![replica](/src/assets/img/perfil.png)
 
-
 ## Desarrollado para 
 [Laboratoria](http://laboratoria.la)
